@@ -19,7 +19,6 @@ typedef NS_ENUM(NSUInteger, WinType) {
 
 static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
-
 @interface ViewController () <
     UICollectionViewDelegate,
     UICollectionViewDataSource,
