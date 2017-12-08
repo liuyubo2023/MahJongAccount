@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		3C99EB881FD58A8B00140A48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EB871FD58A8B00140A48 /* AppDelegate.m */; };
 		3C99EB8B1FD58A8B00140A48 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EB8A1FD58A8B00140A48 /* ViewController.m */; };
-		3C99EB8E1FD58A8B00140A48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C99EB8C1FD58A8B00140A48 /* Main.storyboard */; };
 		3C99EB901FD58A8B00140A48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C99EB8F1FD58A8B00140A48 /* Assets.xcassets */; };
 		3C99EB931FD58A8B00140A48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C99EB911FD58A8B00140A48 /* LaunchScreen.storyboard */; };
 		3C99EB961FD58A8B00140A48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EB951FD58A8B00140A48 /* main.m */; };
 		3C99EBA01FD58A8B00140A48 /* MahJongAccountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EB9F1FD58A8B00140A48 /* MahJongAccountTests.m */; };
 		3C99EBAB1FD58A8B00140A48 /* MahJongAccountUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EBAA1FD58A8B00140A48 /* MahJongAccountUITests.m */; };
+		3C99EBB91FD58FFE00140A48 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C99EBB81FD58FFE00140A48 /* ViewController.xib */; };
+		3C99EBBD1FD59DA500140A48 /* MJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EBBB1FD59DA500140A48 /* MJCollectionViewCell.m */; };
+		3C99EBBE1FD59DA500140A48 /* MJCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C99EBBC1FD59DA500140A48 /* MJCollectionViewCell.xib */; };
+		3C99EBC21FD5B02200140A48 /* UIViewController+DismissKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EBC11FD5B02200140A48 /* UIViewController+DismissKeyboard.m */; };
+		3C99EBC51FD6F6B000140A48 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C99EBC41FD6F6B000140A48 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +44,6 @@
 		3C99EB871FD58A8B00140A48 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3C99EB891FD58A8B00140A48 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3C99EB8A1FD58A8B00140A48 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3C99EB8D1FD58A8B00140A48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C99EB8F1FD58A8B00140A48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C99EB921FD58A8B00140A48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C99EB941FD58A8B00140A48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +54,14 @@
 		3C99EBA61FD58A8B00140A48 /* MahJongAccountUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MahJongAccountUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C99EBAA1FD58A8B00140A48 /* MahJongAccountUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MahJongAccountUITests.m; sourceTree = "<group>"; };
 		3C99EBAC1FD58A8B00140A48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C99EBB81FD58FFE00140A48 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		3C99EBBA1FD59DA500140A48 /* MJCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJCollectionViewCell.h; sourceTree = "<group>"; };
+		3C99EBBB1FD59DA500140A48 /* MJCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJCollectionViewCell.m; sourceTree = "<group>"; };
+		3C99EBBC1FD59DA500140A48 /* MJCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MJCollectionViewCell.xib; sourceTree = "<group>"; };
+		3C99EBBF1FD5A6B300140A48 /* MahJongAccount-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MahJongAccount-Prefix.pch"; sourceTree = "<group>"; };
+		3C99EBC01FD5B02200140A48 /* UIViewController+DismissKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DismissKeyboard.h"; sourceTree = "<group>"; };
+		3C99EBC11FD5B02200140A48 /* UIViewController+DismissKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DismissKeyboard.m"; sourceTree = "<group>"; };
+		3C99EBC41FD6F6B000140A48 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C99EBC51FD6F6B000140A48 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +97,7 @@
 				3C99EB9E1FD58A8B00140A48 /* MahJongAccountTests */,
 				3C99EBA91FD58A8B00140A48 /* MahJongAccountUITests */,
 				3C99EB841FD58A8B00140A48 /* Products */,
+				3C99EBC31FD6F6B000140A48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,9 +118,15 @@
 				3C99EB871FD58A8B00140A48 /* AppDelegate.m */,
 				3C99EB891FD58A8B00140A48 /* ViewController.h */,
 				3C99EB8A1FD58A8B00140A48 /* ViewController.m */,
-				3C99EB8C1FD58A8B00140A48 /* Main.storyboard */,
+				3C99EBB81FD58FFE00140A48 /* ViewController.xib */,
+				3C99EBBA1FD59DA500140A48 /* MJCollectionViewCell.h */,
+				3C99EBBB1FD59DA500140A48 /* MJCollectionViewCell.m */,
+				3C99EBBC1FD59DA500140A48 /* MJCollectionViewCell.xib */,
+				3C99EBC01FD5B02200140A48 /* UIViewController+DismissKeyboard.h */,
+				3C99EBC11FD5B02200140A48 /* UIViewController+DismissKeyboard.m */,
 				3C99EB8F1FD58A8B00140A48 /* Assets.xcassets */,
 				3C99EB911FD58A8B00140A48 /* LaunchScreen.storyboard */,
+				3C99EBBF1FD5A6B300140A48 /* MahJongAccount-Prefix.pch */,
 				3C99EB941FD58A8B00140A48 /* Info.plist */,
 				3C99EB951FD58A8B00140A48 /* main.m */,
 			);
@@ -130,6 +149,14 @@
 				3C99EBAC1FD58A8B00140A48 /* Info.plist */,
 			);
 			path = MahJongAccountUITests;
+			sourceTree = "<group>";
+		};
+		3C99EBC31FD6F6B000140A48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C99EBC41FD6F6B000140A48 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,8 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C99EB931FD58A8B00140A48 /* LaunchScreen.storyboard in Resources */,
+				3C99EBB91FD58FFE00140A48 /* ViewController.xib in Resources */,
 				3C99EB901FD58A8B00140A48 /* Assets.xcassets in Resources */,
-				3C99EB8E1FD58A8B00140A48 /* Main.storyboard in Resources */,
+				3C99EBBE1FD59DA500140A48 /* MJCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,9 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C99EBC21FD5B02200140A48 /* UIViewController+DismissKeyboard.m in Sources */,
 				3C99EB8B1FD58A8B00140A48 /* ViewController.m in Sources */,
 				3C99EB961FD58A8B00140A48 /* main.m in Sources */,
 				3C99EB881FD58A8B00140A48 /* AppDelegate.m in Sources */,
+				3C99EBBD1FD59DA500140A48 /* MJCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,14 +333,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3C99EB8C1FD58A8B00140A48 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C99EB8D1FD58A8B00140A48 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3C99EB911FD58A8B00140A48 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -360,6 +382,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -413,6 +437,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -432,6 +458,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GWK9FAR3J2;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MahJongAccount/MahJongAccount-Prefix.pch";
 				INFOPLIST_FILE = MahJongAccount/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Main.MahJongAccount;
@@ -446,6 +474,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GWK9FAR3J2;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MahJongAccount/MahJongAccount-Prefix.pch";
 				INFOPLIST_FILE = MahJongAccount/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Main.MahJongAccount;
