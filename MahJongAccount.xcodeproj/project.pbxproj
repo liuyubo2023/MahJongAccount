@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C7723D11FDEBCD900CF1501 /* CalculateNumUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7723D01FDEBCD900CF1501 /* CalculateNumUtils.m */; };
 		3C99EB881FD58A8B00140A48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EB871FD58A8B00140A48 /* AppDelegate.m */; };
 		3C99EB8B1FD58A8B00140A48 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EB8A1FD58A8B00140A48 /* ViewController.m */; };
 		3C99EB901FD58A8B00140A48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C99EB8F1FD58A8B00140A48 /* Assets.xcassets */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C7723CF1FDEBCD900CF1501 /* CalculateNumUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculateNumUtils.h; sourceTree = "<group>"; };
+		3C7723D01FDEBCD900CF1501 /* CalculateNumUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculateNumUtils.m; sourceTree = "<group>"; };
 		3C99EB831FD58A8B00140A48 /* MahJongAccount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MahJongAccount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C99EB861FD58A8B00140A48 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C99EB871FD58A8B00140A48 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 				3C99EBBA1FD59DA500140A48 /* MJCollectionViewCell.h */,
 				3C99EBBB1FD59DA500140A48 /* MJCollectionViewCell.m */,
 				3C99EBBC1FD59DA500140A48 /* MJCollectionViewCell.xib */,
+				3C7723CF1FDEBCD900CF1501 /* CalculateNumUtils.h */,
+				3C7723D01FDEBCD900CF1501 /* CalculateNumUtils.m */,
 				3C99EBC01FD5B02200140A48 /* UIViewController+DismissKeyboard.h */,
 				3C99EBC11FD5B02200140A48 /* UIViewController+DismissKeyboard.m */,
 				3C99EB8F1FD58A8B00140A48 /* Assets.xcassets */,
@@ -298,6 +303,7 @@
 				3C99EB961FD58A8B00140A48 /* main.m in Sources */,
 				3C99EB881FD58A8B00140A48 /* AppDelegate.m in Sources */,
 				3C99EBBD1FD59DA500140A48 /* MJCollectionViewCell.m in Sources */,
+				3C7723D11FDEBCD900CF1501 /* CalculateNumUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

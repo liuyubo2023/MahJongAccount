@@ -8,14 +8,7 @@
 
 #import "ViewController.h"
 #import "MJCollectionViewCell.h"
-
-typedef NS_ENUM(NSUInteger, WinType) {
-    winTypeBankerHu,
-    winTypeSlideHu,
-    winTypeBankerZimo,
-    winTypeSlideZimo,
-    winTypeGang
-};
+#import "CalculateNumUtils.h"
 
 static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
@@ -28,7 +21,10 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 @property (nonatomic, strong) AVSpeechSynthesizer *synthesizer;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
-@property (nonatomic, assign) NSInteger bankerCount;
+@property (nonatomic, assign) NSInteger bankerCount;    //庄的计数
+@property (nonatomic, assign) BOOL isBanker;            //是不是庄
+@property (nonatomic, assign) NSInteger bankerNum;      //庄是第几列
+@property (nonatomic, assign) NSUInteger winTimes;      //倍数
 
 @property (nonatomic, assign) NSInteger firstNum;
 @property (nonatomic, assign) NSInteger secondNum;
@@ -39,7 +35,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 @property (nonatomic, assign) NSInteger thirdTotal;
 @property (nonatomic, assign) NSInteger fourthTotal;
 
-@property (nonatomic, strong) NSMutableArray *countArray;
+@property (nonatomic, strong) NSArray *countArray;  //计数的数组
 
 @end
 
@@ -74,13 +70,18 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MJCollectionViewCell *cell = (MJCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kCollectionCell forIndexPath:indexPath];
     switch (indexPath.row) {
-        case 0 ... 3:
+        case 0 ... 3: {
             cell.textField.text = @"姓";
-            cell.textField.userInteractionEnabled = YES;
-            cell.textField.backgroundColor = [UIColor purpleColor];
+            if (indexPath.row == _bankerCount % 4) {
+                cell.textField.backgroundColor = [UIColor redColor];
+            } else {
+                cell.textField.backgroundColor = [UIColor purpleColor];
+            }
+        }
             break;
         case 4 ... 11:
             cell.textField.backgroundColor = [UIColor brownColor];
+            cell.textField.text = [NSString stringWithFormat:@"%@",self.countArray[indexPath.row - 4]];
             break;
         case 12 ... 15:
             cell.textField.text = @"胡";
@@ -102,25 +103,31 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    //行数
     NSInteger divisor = indexPath.row / 4;
+    //列数
     NSInteger remainder = indexPath.row  % 4;
-//    MJCollectionViewCell *cell = (MJCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+    //是不是庄
+    //    _isBanker = (_bankerCount % 4 == remainder);
+    //庄是第几列
+    _bankerNum =_bankerCount % 4;
+    //    MJCollectionViewCell *cell = (MJCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     switch (divisor) {
+            case 0:
+            _bankerCount = remainder;
+            break;
         case 3:
-            if (remainder == _bankerCount % 4) {
-                [self changeNumber:winTypeBankerHu];
-            } else {
-                [self changeNumber:winTypeSlideHu];
-            }
+            [self changeNumber:winTypeHu gamerNum:remainder bankerNum:_bankerNum];
+            break;
+        case 4:
+            [self changeNumber:winTypeZimo gamerNum:remainder bankerNum:_bankerNum];
+            break;
+        case 5:
+            [self changeNumber:winTypeGang gamerNum:remainder bankerNum:_bankerNum];
             break;
         default:
             break;
     }
-    
-
-    [self speechInfo:@"刘宇波+16"];
-    
-    NSLog(@"%lu",indexPath.row);
 }
 
 #pragma mark - private methods
@@ -129,11 +136,9 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
     [self.collectionView registerNib:[UINib nibWithNibName:kCollectionCell bundle:nil] forCellWithReuseIdentifier:kCollectionCell];
 }
 
-- (NSMutableArray *)changeNumber:(WinType)wintype {
-    if (winTypeBankerHu) {
-        
-    }
-    return _countArray;
+- (void)changeNumber:(WinType)wintype gamerNum:(NSInteger)gamerNum bankerNum:(NSInteger)bankerNum{
+    _countArray = [[CalculateNumUtils sharedManager] calculateWithWinType:wintype winnerNum:wintype bankerNum:bankerNum];
+    [self.collectionView reloadData];
 }
 
 //语音播报
@@ -148,11 +153,9 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
     [_synthesizer speakUtterance:utterance];
 }
 
-- (NSMutableArray *)countArray {
+- (NSArray *)countArray {
     if (!_countArray) {
-        _countArray = [[NSMutableArray alloc] initWithArray:
-                       @[@(_firstNum),@(_secondNum),@(_thirdNum),@(_fourthNum),
-                         @(_firstTotal),@(_secondTotal),@(_thirdTotal),@(_fourthTotal)]];
+        _countArray = @[@0,@0,@0,@0,@0,@0,@0,@0,];
     }
     return _countArray;
 }
