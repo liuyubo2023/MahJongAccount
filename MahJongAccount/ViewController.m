@@ -89,6 +89,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
             break;
         case 16 ... 19:
             cell.textField.text = @"自摸";
+            cell.textField.backgroundColor = UIColorFromRGB(0xF96750);
             break;
         case 20 ... 23:
             cell.textField.text = @"杠";
@@ -111,23 +112,25 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
     //    _isBanker = (_bankerCount % 4 == remainder);
     //庄是第几列
     _bankerNum =_bankerCount % 4;
-    //    MJCollectionViewCell *cell = (MJCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+//        MJCollectionViewCell *cell = (MJCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     switch (divisor) {
             case 0:
             _bankerCount = remainder;
+            [self.collectionView reloadData];
             break;
         case 3:
-            [self changeNumber:winTypeHu gamerNum:remainder bankerNum:_bankerNum];
+            [self changeNumber:winTypeHu winnerNum:remainder bankerNum:_bankerNum];
             break;
         case 4:
-            [self changeNumber:winTypeZimo gamerNum:remainder bankerNum:_bankerNum];
+            [self changeNumber:winTypeZimo winnerNum:remainder bankerNum:_bankerNum];
             break;
         case 5:
-            [self changeNumber:winTypeGang gamerNum:remainder bankerNum:_bankerNum];
+            [self changeNumber:winTypeGang winnerNum:remainder bankerNum:_bankerNum];
             break;
         default:
             break;
     }
+//    NSLog(@"%lu",indexPath.row);
 }
 
 #pragma mark - private methods
@@ -136,8 +139,11 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
     [self.collectionView registerNib:[UINib nibWithNibName:kCollectionCell bundle:nil] forCellWithReuseIdentifier:kCollectionCell];
 }
 
-- (void)changeNumber:(WinType)wintype gamerNum:(NSInteger)gamerNum bankerNum:(NSInteger)bankerNum{
-    _countArray = [[CalculateNumUtils sharedManager] calculateWithWinType:wintype winnerNum:wintype bankerNum:bankerNum];
+- (void)changeNumber:(WinType)wintype winnerNum:(NSInteger)winnerNum bankerNum:(NSInteger)bankerNum{
+    _countArray = [[CalculateNumUtils sharedManager] calculateWithWinType:wintype winnerNum:winnerNum bankerNum:bankerNum];
+    if (winnerNum != bankerNum) {
+        _bankerCount += 1;
+    }
     [self.collectionView reloadData];
 }
 

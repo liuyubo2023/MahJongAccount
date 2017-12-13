@@ -82,7 +82,7 @@
                 } else if (i == bankerNum){
                     presentArray[i] = @(-2 * times);
                 } else {
-                    presentArray[i] = @(1 * times);
+                    presentArray[i] = @(-1 * times);
                 }
             }
         }
