@@ -35,7 +35,7 @@
     return self;
 }
 
-- (NSArray *)calculateWithWinType:(WinType)winType winnerNum:(NSUInteger)winnerNum bankerNum:(NSUInteger)bankerNum {
+- (NSMutableArray *)calculateWithWinType:(WinType)winType winnerNum:(NSUInteger)winnerNum bankerNum:(NSUInteger)bankerNum {
     NSMutableArray *totalArray = [NSMutableArray arrayWithCapacity:8];
     
     NSArray *presentArray = [self presentGameWithWinType:winType winnerNum:winnerNum bankerNum:bankerNum];
@@ -46,12 +46,8 @@
     
     [totalArray addObjectsFromArray:_totalMutableArray];
     [totalArray addObjectsFromArray:presentArray];
-    return [totalArray copy];
+    return totalArray;
 }
-
-//- (NSArray *)totalArray:(NSArray *)presentArray {
-//
-//}
 
 - (NSArray *)presentGameWithWinType:(WinType)winType winnerNum:(NSUInteger)winnerNum bankerNum:(NSUInteger)bankerNum {
     NSMutableArray *presentArray = [NSMutableArray arrayWithObjects:@0, @0, @0, @0, nil];

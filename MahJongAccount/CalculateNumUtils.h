@@ -13,6 +13,6 @@
 
 + (instancetype)sharedManager;
 
-- (NSArray *)calculateWithWinType:(WinType)winType winnerNum:(NSUInteger)winnerNum bankerNum:(NSUInteger)bankerNum;
+- (NSMutableArray *)calculateWithWinType:(WinType)winType winnerNum:(NSUInteger)winnerNum bankerNum:(NSUInteger)bankerNum;
 
 @end

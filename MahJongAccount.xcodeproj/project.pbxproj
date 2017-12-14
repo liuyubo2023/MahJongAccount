@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3C7723D11FDEBCD900CF1501 /* CalculateNumUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7723D01FDEBCD900CF1501 /* CalculateNumUtils.m */; };
+		3C7723D51FE2B9FC00CF1501 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7723D31FE2B9FC00CF1501 /* SettingViewController.m */; };
+		3C7723D61FE2B9FC00CF1501 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C7723D41FE2B9FC00CF1501 /* SettingViewController.xib */; };
 		3C99EB881FD58A8B00140A48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EB871FD58A8B00140A48 /* AppDelegate.m */; };
 		3C99EB8B1FD58A8B00140A48 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EB8A1FD58A8B00140A48 /* ViewController.m */; };
 		3C99EB901FD58A8B00140A48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C99EB8F1FD58A8B00140A48 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 		3C99EBBE1FD59DA500140A48 /* MJCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C99EBBC1FD59DA500140A48 /* MJCollectionViewCell.xib */; };
 		3C99EBC21FD5B02200140A48 /* UIViewController+DismissKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EBC11FD5B02200140A48 /* UIViewController+DismissKeyboard.m */; };
 		3C99EBC51FD6F6B000140A48 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C99EBC41FD6F6B000140A48 /* AVFoundation.framework */; };
+		3CACEA831FE2CCBE00700C15 /* GamerNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CACEA811FE2CCBE00700C15 /* GamerNameTableViewCell.m */; };
+		3CACEA841FE2CCBE00700C15 /* GamerNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CACEA821FE2CCBE00700C15 /* GamerNameTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,9 @@
 /* Begin PBXFileReference section */
 		3C7723CF1FDEBCD900CF1501 /* CalculateNumUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculateNumUtils.h; sourceTree = "<group>"; };
 		3C7723D01FDEBCD900CF1501 /* CalculateNumUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculateNumUtils.m; sourceTree = "<group>"; };
+		3C7723D21FE2B9FC00CF1501 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		3C7723D31FE2B9FC00CF1501 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		3C7723D41FE2B9FC00CF1501 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		3C99EB831FD58A8B00140A48 /* MahJongAccount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MahJongAccount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C99EB861FD58A8B00140A48 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C99EB871FD58A8B00140A48 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -65,6 +72,9 @@
 		3C99EBC01FD5B02200140A48 /* UIViewController+DismissKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DismissKeyboard.h"; sourceTree = "<group>"; };
 		3C99EBC11FD5B02200140A48 /* UIViewController+DismissKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DismissKeyboard.m"; sourceTree = "<group>"; };
 		3C99EBC41FD6F6B000140A48 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3CACEA801FE2CCBE00700C15 /* GamerNameTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamerNameTableViewCell.h; sourceTree = "<group>"; };
+		3CACEA811FE2CCBE00700C15 /* GamerNameTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamerNameTableViewCell.m; sourceTree = "<group>"; };
+		3CACEA821FE2CCBE00700C15 /* GamerNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamerNameTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +132,15 @@
 				3C99EB891FD58A8B00140A48 /* ViewController.h */,
 				3C99EB8A1FD58A8B00140A48 /* ViewController.m */,
 				3C99EBB81FD58FFE00140A48 /* ViewController.xib */,
+				3C7723D21FE2B9FC00CF1501 /* SettingViewController.h */,
+				3C7723D31FE2B9FC00CF1501 /* SettingViewController.m */,
+				3C7723D41FE2B9FC00CF1501 /* SettingViewController.xib */,
 				3C99EBBA1FD59DA500140A48 /* MJCollectionViewCell.h */,
 				3C99EBBB1FD59DA500140A48 /* MJCollectionViewCell.m */,
 				3C99EBBC1FD59DA500140A48 /* MJCollectionViewCell.xib */,
+				3CACEA801FE2CCBE00700C15 /* GamerNameTableViewCell.h */,
+				3CACEA811FE2CCBE00700C15 /* GamerNameTableViewCell.m */,
+				3CACEA821FE2CCBE00700C15 /* GamerNameTableViewCell.xib */,
 				3C7723CF1FDEBCD900CF1501 /* CalculateNumUtils.h */,
 				3C7723D01FDEBCD900CF1501 /* CalculateNumUtils.m */,
 				3C99EBC01FD5B02200140A48 /* UIViewController+DismissKeyboard.h */,
@@ -271,6 +287,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C99EB931FD58A8B00140A48 /* LaunchScreen.storyboard in Resources */,
+				3CACEA841FE2CCBE00700C15 /* GamerNameTableViewCell.xib in Resources */,
+				3C7723D61FE2B9FC00CF1501 /* SettingViewController.xib in Resources */,
 				3C99EBB91FD58FFE00140A48 /* ViewController.xib in Resources */,
 				3C99EB901FD58A8B00140A48 /* Assets.xcassets in Resources */,
 				3C99EBBE1FD59DA500140A48 /* MJCollectionViewCell.xib in Resources */,
@@ -301,6 +319,8 @@
 				3C99EBC21FD5B02200140A48 /* UIViewController+DismissKeyboard.m in Sources */,
 				3C99EB8B1FD58A8B00140A48 /* ViewController.m in Sources */,
 				3C99EB961FD58A8B00140A48 /* main.m in Sources */,
+				3CACEA831FE2CCBE00700C15 /* GamerNameTableViewCell.m in Sources */,
+				3C7723D51FE2B9FC00CF1501 /* SettingViewController.m in Sources */,
 				3C99EB881FD58A8B00140A48 /* AppDelegate.m in Sources */,
 				3C99EBBD1FD59DA500140A48 /* MJCollectionViewCell.m in Sources */,
 				3C7723D11FDEBCD900CF1501 /* CalculateNumUtils.m in Sources */,

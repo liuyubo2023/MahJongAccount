@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "MJCollectionViewCell.h"
 #import "CalculateNumUtils.h"
+#import "SettingViewController.h"
 
 static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
@@ -26,16 +27,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 @property (nonatomic, assign) NSInteger bankerNum;      //庄是第几列
 @property (nonatomic, assign) NSUInteger winTimes;      //倍数
 
-@property (nonatomic, assign) NSInteger firstNum;
-@property (nonatomic, assign) NSInteger secondNum;
-@property (nonatomic, assign) NSInteger thirdNum;
-@property (nonatomic, assign) NSInteger fourthNum;
-@property (nonatomic, assign) NSInteger firstTotal;
-@property (nonatomic, assign) NSInteger secondTotal;
-@property (nonatomic, assign) NSInteger thirdTotal;
-@property (nonatomic, assign) NSInteger fourthTotal;
-
-@property (nonatomic, strong) NSArray *countArray;  //计数的数组
+@property (nonatomic, strong) NSMutableArray *countArray;  //计数的数组
 
 @end
 
@@ -46,6 +38,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
     
     self.title = @"计算";
     [self setupCollectionView];
+    [self setupRightBarButton];
     [self setupForDismissKeyboard];
     self.synthesizer = [[AVSpeechSynthesizer alloc] init];
 }
@@ -130,7 +123,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
         default:
             break;
     }
-//    NSLog(@"%lu",indexPath.row);
+    NSLog(@"%lu",indexPath.row);
 }
 
 #pragma mark - private methods
@@ -141,10 +134,23 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
 - (void)changeNumber:(WinType)wintype winnerNum:(NSInteger)winnerNum bankerNum:(NSInteger)bankerNum{
     _countArray = [[CalculateNumUtils sharedManager] calculateWithWinType:wintype winnerNum:winnerNum bankerNum:bankerNum];
-    if (winnerNum != bankerNum) {
+    for (int i = 0; i < 8; i++) {
+        _countArray[i] = @([_countArray[i] intValue] * 2);
+    }
+    if (wintype != winTypeGang && winnerNum != bankerNum) {
         _bankerCount += 1;
     }
     [self.collectionView reloadData];
+}
+
+- (void)setupRightBarButton {
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(TapToSettingVC)];
+    self.navigationItem.rightBarButtonItem = button;
+}
+
+- (void)TapToSettingVC {
+    SettingViewController *vc = [[SettingViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 //语音播报
@@ -159,9 +165,9 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
     [_synthesizer speakUtterance:utterance];
 }
 
-- (NSArray *)countArray {
+- (NSMutableArray *)countArray {
     if (!_countArray) {
-        _countArray = @[@0,@0,@0,@0,@0,@0,@0,@0,];
+        _countArray = [NSMutableArray arrayWithObjects:@0,@0,@0,@0,@0,@0,@0,@0, nil];
     }
     return _countArray;
 }
