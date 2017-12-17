@@ -16,7 +16,8 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 @interface ViewController () <
     UICollectionViewDelegate,
     UICollectionViewDataSource,
-    UICollectionViewDelegateFlowLayout
+    UICollectionViewDelegateFlowLayout,
+    SettingViewControllerDelegate
 >
 
 @property (nonatomic, strong) AVSpeechSynthesizer *synthesizer;
@@ -28,6 +29,8 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 @property (nonatomic, assign) NSUInteger winTimes;      //倍数
 
 @property (nonatomic, strong) NSMutableArray *countArray;  //计数的数组
+
+@property (nonatomic, copy) NSArray *callBackNames;
 
 @end
 
@@ -64,7 +67,11 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
     MJCollectionViewCell *cell = (MJCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kCollectionCell forIndexPath:indexPath];
     switch (indexPath.row) {
         case 0 ... 3: {
-            cell.textField.text = @"姓";
+            if (self.callBackNames.count == 4) {
+                cell.textField.text = self.callBackNames[indexPath.row];
+            } else {
+                cell.textField.text = @"姓";
+            }
             if (indexPath.row == _bankerCount % 4) {
                 cell.textField.backgroundColor = [UIColor redColor];
             } else {
@@ -150,6 +157,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
 - (void)TapToSettingVC {
     SettingViewController *vc = [[SettingViewController alloc] init];
+    vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -170,6 +178,12 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
         _countArray = [NSMutableArray arrayWithObjects:@0,@0,@0,@0,@0,@0,@0,@0, nil];
     }
     return _countArray;
+}
+
+#pragma mark - delegate
+- (void)sendNames:(NSArray *)names {
+    self.callBackNames = [names copy];
+    [self.collectionView reloadData];
 }
 
 @end
