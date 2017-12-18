@@ -53,10 +53,8 @@
 }
 
 #pragma mark - public
-- (id)pop {
-    id object = [self peek];
+- (void)pop {
     [self.stackArray removeLastObject];
-    return object;
 }
 
 - (void)removeFirstObject {

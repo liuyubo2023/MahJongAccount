@@ -7,6 +7,7 @@
 //
 
 #import "CalculateNumUtils.h"
+#import "FileManager.h"
 
 @interface CalculateNumUtils()
 
@@ -36,17 +37,13 @@
 }
 
 - (NSMutableArray *)calculateWithWinType:(WinType)winType winnerNum:(NSUInteger)winnerNum bankerNum:(NSUInteger)bankerNum {
-    NSMutableArray *totalArray = [NSMutableArray arrayWithCapacity:8];
-    
     NSArray *presentArray = [self presentGameWithWinType:winType winnerNum:winnerNum bankerNum:bankerNum];
-    
+    self.totalMutableArray = [[[FileManager defaultManager].games peek] countArray];
     for (int i = 0; i < 4; i++) {
         self.totalMutableArray[i] = @([self.totalMutableArray[i] intValue] + [presentArray[i] intValue]);
+        self.totalMutableArray[i+4] = presentArray[i];
     }
-    
-    [totalArray addObjectsFromArray:_totalMutableArray];
-    [totalArray addObjectsFromArray:presentArray];
-    return totalArray;
+    return self.totalMutableArray;
 }
 
 - (NSArray *)presentGameWithWinType:(WinType)winType winnerNum:(NSUInteger)winnerNum bankerNum:(NSUInteger)bankerNum {
@@ -88,7 +85,7 @@
 
 - (NSMutableArray *)totalMutableArray {
     if (!_totalMutableArray) {
-        _totalMutableArray = [NSMutableArray arrayWithObjects:@0, @0, @0, @0, nil];
+        _totalMutableArray = [NSMutableArray arrayWithObjects:@0, @0, @0, @0, @0, @0, @0, @0, nil];
     }
     return _totalMutableArray;
 }

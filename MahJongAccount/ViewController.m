@@ -40,8 +40,11 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    [[FileManager defaultManager].games clear];
+    
     self.title = @"计算";
     [self setupCollectionView];
+    [self setupLeftBarButton];
     [self setupRightBarButton];
     [self setupForDismissKeyboard];
     self.synthesizer = [[AVSpeechSynthesizer alloc] init];
@@ -66,6 +69,8 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MJCollectionViewCell *cell = (MJCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kCollectionCell forIndexPath:indexPath];
+    self.bankerCount = [[[FileManager defaultManager].games peek] bankerCount];
+    self.countArray = [[[FileManager defaultManager].games peek] countArray];
     switch (indexPath.row) {
         case 0 ... 3: {
             if (self.callBackNames.count == 4) {
@@ -82,7 +87,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
             break;
         case 4 ... 11:
             cell.textField.backgroundColor = [UIColor brownColor];
-            cell.textField.text = [NSString stringWithFormat:@"%@",self.countArray[indexPath.row - 4]];
+            cell.textField.text = [NSString stringWithFormat:@"%d",([self.countArray[indexPath.row - 4] intValue] * 2)];
             break;
         case 12 ... 15:
             cell.textField.text = @"胡";
@@ -109,15 +114,12 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
     NSInteger divisor = indexPath.row / 4;
     //列数
     NSInteger remainder = indexPath.row  % 4;
-    //是不是庄
-    //    _isBanker = (_bankerCount % 4 == remainder);
     //庄是第几列
     _bankerNum =_bankerCount % 4;
-//        MJCollectionViewCell *cell = (MJCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     switch (divisor) {
             case 0:
             _bankerCount = remainder;
-            [self.collectionView reloadData];
+            [self saveGameInfo];
             break;
         case 3:
             [self changeNumber:winTypeHu winnerNum:remainder bankerNum:_bankerNum];
@@ -142,20 +144,22 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
 - (void)changeNumber:(WinType)wintype winnerNum:(NSInteger)winnerNum bankerNum:(NSInteger)bankerNum{
     _countArray = [[CalculateNumUtils sharedManager] calculateWithWinType:wintype winnerNum:winnerNum bankerNum:bankerNum];
-    for (int i = 0; i < 8; i++) {
-        _countArray[i] = @([_countArray[i] intValue] * 2);
-    }
+    
     if (wintype != winTypeGang && winnerNum != bankerNum) {
         _bankerCount += 1;
     }
-    [self.collectionView reloadData];
     
+    [self saveGameInfo];
+}
+
+- (void)saveGameInfo {
     GameModel *game = [[GameModel alloc] init];
     game.countArray = _countArray;
     game.bankerCount = _bankerCount;
     
     [[FileManager defaultManager].games push:game];
     [[FileManager defaultManager] saveGame];
+    [self.collectionView reloadData];
 }
 
 - (void)setupRightBarButton {
@@ -163,10 +167,20 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
     self.navigationItem.rightBarButtonItem = button;
 }
 
+- (void)setupLeftBarButton {
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(tapRevoke)];
+    self.navigationItem.leftBarButtonItem = button;
+}
+
 - (void)TapToSettingVC {
     SettingViewController *vc = [[SettingViewController alloc] init];
     vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)tapRevoke {
+    [[FileManager defaultManager].games pop];
+    [self.collectionView reloadData];
 }
 
 //语音播报

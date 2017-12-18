@@ -12,7 +12,7 @@
 
 - (instancetype)initWithSize:(NSUInteger)size;
 
-- (id)pop;
+- (void)pop;
 - (void)push:(id)object;
 - (id)peek;
 - (NSInteger)size;
