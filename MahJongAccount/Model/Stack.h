@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Stack : NSObject
+@interface Stack : NSObject <NSCoding>
 
 - (instancetype)initWithSize:(NSUInteger)size;
 

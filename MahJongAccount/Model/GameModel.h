@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 // 这个model定义了主页面的数据结构
-@interface GameModel : NSObject
+@interface GameModel : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSMutableArray *countArray;
 @property (nonatomic, assign) NSInteger bankerCount;
