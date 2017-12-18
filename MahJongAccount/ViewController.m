@@ -10,6 +10,7 @@
 #import "MJCollectionViewCell.h"
 #import "CalculateNumUtils.h"
 #import "SettingViewController.h"
+#import "FileManager.h"
 
 static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
@@ -148,6 +149,13 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
         _bankerCount += 1;
     }
     [self.collectionView reloadData];
+    
+    GameModel *game = [[GameModel alloc] init];
+    game.countArray = _countArray;
+    game.bankerCount = _bankerCount;
+    
+    [[FileManager defaultManager].games push:game];
+    [[FileManager defaultManager] saveGame];
 }
 
 - (void)setupRightBarButton {

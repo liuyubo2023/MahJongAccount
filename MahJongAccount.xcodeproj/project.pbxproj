@@ -24,6 +24,9 @@
 		3C99EBC51FD6F6B000140A48 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C99EBC41FD6F6B000140A48 /* AVFoundation.framework */; };
 		3CACEA831FE2CCBE00700C15 /* GamerNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CACEA811FE2CCBE00700C15 /* GamerNameTableViewCell.m */; };
 		3CACEA841FE2CCBE00700C15 /* GamerNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CACEA821FE2CCBE00700C15 /* GamerNameTableViewCell.xib */; };
+		4C9C761A1FE7E5D700DEC6F0 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C76131FE7E5D700DEC6F0 /* Stack.m */; };
+		4C9C761B1FE7E5D700DEC6F0 /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C76161FE7E5D700DEC6F0 /* FileManager.m */; };
+		4C9C761C1FE7E5D700DEC6F0 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C76181FE7E5D700DEC6F0 /* GameModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,12 @@
 		3CACEA801FE2CCBE00700C15 /* GamerNameTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamerNameTableViewCell.h; sourceTree = "<group>"; };
 		3CACEA811FE2CCBE00700C15 /* GamerNameTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamerNameTableViewCell.m; sourceTree = "<group>"; };
 		3CACEA821FE2CCBE00700C15 /* GamerNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamerNameTableViewCell.xib; sourceTree = "<group>"; };
+		4C9C76121FE7E5D700DEC6F0 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		4C9C76131FE7E5D700DEC6F0 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		4C9C76141FE7E5D700DEC6F0 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		4C9C76161FE7E5D700DEC6F0 /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
+		4C9C76171FE7E5D700DEC6F0 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		4C9C76181FE7E5D700DEC6F0 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +136,7 @@
 		3C99EB851FD58A8B00140A48 /* MahJongAccount */ = {
 			isa = PBXGroup;
 			children = (
+				4C9C76111FE7E5D700DEC6F0 /* Model */,
 				3C99EB861FD58A8B00140A48 /* AppDelegate.h */,
 				3C99EB871FD58A8B00140A48 /* AppDelegate.m */,
 				3C99EB891FD58A8B00140A48 /* ViewController.h */,
@@ -178,6 +188,19 @@
 				3C99EBC41FD6F6B000140A48 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C9C76111FE7E5D700DEC6F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C9C76121FE7E5D700DEC6F0 /* FileManager.h */,
+				4C9C76161FE7E5D700DEC6F0 /* FileManager.m */,
+				4C9C76171FE7E5D700DEC6F0 /* Stack.h */,
+				4C9C76131FE7E5D700DEC6F0 /* Stack.m */,
+				4C9C76141FE7E5D700DEC6F0 /* GameModel.h */,
+				4C9C76181FE7E5D700DEC6F0 /* GameModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,12 +339,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C9C761A1FE7E5D700DEC6F0 /* Stack.m in Sources */,
 				3C99EBC21FD5B02200140A48 /* UIViewController+DismissKeyboard.m in Sources */,
 				3C99EB8B1FD58A8B00140A48 /* ViewController.m in Sources */,
+				4C9C761B1FE7E5D700DEC6F0 /* FileManager.m in Sources */,
 				3C99EB961FD58A8B00140A48 /* main.m in Sources */,
 				3CACEA831FE2CCBE00700C15 /* GamerNameTableViewCell.m in Sources */,
 				3C7723D51FE2B9FC00CF1501 /* SettingViewController.m in Sources */,
 				3C99EB881FD58A8B00140A48 /* AppDelegate.m in Sources */,
+				4C9C761C1FE7E5D700DEC6F0 /* GameModel.m in Sources */,
 				3C99EBBD1FD59DA500140A48 /* MJCollectionViewCell.m in Sources */,
 				3C7723D11FDEBCD900CF1501 /* CalculateNumUtils.m in Sources */,
 			);
