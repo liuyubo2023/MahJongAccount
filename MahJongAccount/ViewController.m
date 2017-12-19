@@ -42,8 +42,6 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [[FileManager defaultManager].games clear];
-    
     self.title = @"计算";
     [self setupCollectionView];
     [self setupLeftBarButton];
@@ -138,6 +136,17 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
     NSLog(@"%lu",indexPath.row);
 }
 
+#pragma mark - event handlers
+- (void)setupRightBarButton {
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(TapToSettingVC)];
+    self.navigationItem.rightBarButtonItem = button;
+}
+
+- (void)setupLeftBarButton {
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(tapRevoke)];
+    self.navigationItem.leftBarButtonItem = button;
+}
+
 #pragma mark - private methods
 - (void)setupCollectionView {
     self.collectionView.showsVerticalScrollIndicator = NO;
@@ -164,16 +173,6 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
     [self.collectionView reloadData];
 }
 
-- (void)setupRightBarButton {
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(TapToSettingVC)];
-    self.navigationItem.rightBarButtonItem = button;
-}
-
-- (void)setupLeftBarButton {
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(tapRevoke)];
-    self.navigationItem.leftBarButtonItem = button;
-}
-
 - (void)TapToSettingVC {
     SettingViewController *vc = [[SettingViewController alloc] init];
     vc.delegate = self;
@@ -182,8 +181,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
 - (void)tapRevoke {
     [[FileManager defaultManager].games pop];
-    GameModel *game = [FileManager defaultManager].games.peek;
-    self.countArray = game.countArray;
+    [[FileManager defaultManager] saveGame];
     [self.collectionView reloadData];
 }
 
