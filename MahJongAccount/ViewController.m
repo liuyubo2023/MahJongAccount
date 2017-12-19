@@ -164,6 +164,9 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
         _bankerCount += 1;
     }
     
+    NSString *speakString = [NSString stringWithFormat:@"%@+%d",self.namesArray[winnerNum],([_countArray[winnerNum+4] intValue] * 2)];
+    [self speechInfo:speakString];
+    
     [self saveGameInfo];
 }
 
@@ -200,7 +203,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
     AVSpeechSynthesisVoice * voiceType = [AVSpeechSynthesisVoice voiceWithLanguage:@"zh-CN"];
     utterance.voice = voiceType;
     //设置播报语速
-    utterance.rate = 0.4;
+    utterance.rate = 0.5;
     [_synthesizer speakUtterance:utterance];
 }
 
