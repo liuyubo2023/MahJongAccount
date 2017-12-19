@@ -21,4 +21,8 @@
 
 - (void)loadGames;
 
+- (void)saveNames:(NSArray<NSString *> *)namesArray;
+
+- (NSArray<NSString *> *)loadNames;
+
 @end

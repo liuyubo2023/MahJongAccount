@@ -15,7 +15,7 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
 
 @interface SettingViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *callBackNames;
+@property (nonatomic, strong) NSMutableArray *namesMutableArray;
 
 @end
 
@@ -50,6 +50,8 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
     UITableViewCell *cell = [[UITableViewCell alloc] init];
     if (indexPath.section == 0) {
         GamerNameTableViewCell *nameCell = (GamerNameTableViewCell *)[tableView dequeueReusableCellWithIdentifier:KGamerNameTableViewCell forIndexPath:indexPath];
+        nameCell.nameLabel.text = [NSString stringWithFormat:@"第%lu列的名字",indexPath.row];
+        nameCell.nameTextField.text = self.namesMutableArray[indexPath.row];
         nameCell.nameTextField.tag = indexPath.row;
         nameCell.nameTextField.delegate = self;
         [nameCell.nameTextField addTarget:self action:@selector(textFieldTextChanged:) forControlEvents:UIControlEventEditingChanged];
@@ -79,11 +81,14 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
 - (void)setupTableView {
     [self.tableView registerNib:[UINib nibWithNibName:KGamerNameTableViewCell bundle:nil] forCellReuseIdentifier:KGamerNameTableViewCell];
     
+    
+    self.namesMutableArray = [[[FileManager defaultManager] loadNames] mutableCopy];
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(didTapDone:)];
 }
 
 - (void)didTapDone:(id)sender {
-    [self.delegate sendNames:self.callBackNames];
+    [[FileManager defaultManager] saveNames:[self.namesMutableArray copy]];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -100,16 +105,16 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
 - (void)textFieldTextChanged:(UITextField *)textField {
     switch (textField.tag) {
         case 0:
-            self.callBackNames[0] = textField.text;
+            self.namesMutableArray[0] = textField.text;
             break;
         case 1:
-            self.callBackNames[1] = textField.text;
+            self.namesMutableArray[1] = textField.text;
             break;
         case 2:
-            self.callBackNames[2] = textField.text;
+            self.namesMutableArray[2] = textField.text;
             break;
         case 3:
-            self.callBackNames[3] = textField.text;
+            self.namesMutableArray[3] = textField.text;
             break;
             
         default:
@@ -118,11 +123,11 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
 }
 
 #pragma mark - getters
-- (NSMutableArray *)callBackNames {
-    if (!_callBackNames) {
-        _callBackNames = [@[@"", @"", @"", @""] mutableCopy];
+- (NSMutableArray *)namesMutableArray {
+    if (!_namesMutableArray) {
+        _namesMutableArray = [@[@"", @"", @"", @""] mutableCopy];
     }
-    return _callBackNames;
+    return _namesMutableArray;
 }
 
 @end

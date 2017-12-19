@@ -25,9 +25,9 @@
 
 - (instancetype)initPrivate {
     self = [super init];
-    if (self) {
-        [self loadGames];
-    }
+//    if (self) {
+//        [self loadGames];
+//    }
     return self;
 }
 
@@ -39,6 +39,10 @@
 
 - (NSString *)dataFilePath {
     return [[self documentsDirectory] stringByAppendingPathComponent:@"Games.plist"];
+}
+
+- (NSString *)nameFilePath {
+    return [[self documentsDirectory] stringByAppendingPathComponent:@"Names.plist"];
 }
 
 - (void)saveGame {
@@ -59,6 +63,28 @@
     } else {
         self.games = [[Stack alloc] initWithSize:10];
     }
+}
+
+- (void)saveNames:(NSArray<NSString *> *)namesArray {
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    [archiver encodeObject:namesArray forKey:@"Names"];
+    [archiver finishEncoding];
+    [data writeToFile:[self nameFilePath] atomically:YES];
+}
+
+- (NSArray<NSString *> *)loadNames {
+    NSString *path = [self nameFilePath];
+    NSArray *namesArray = [NSArray array];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+        namesArray = [unarchiver decodeObjectForKey:@"Names"];
+        [unarchiver finishDecoding];
+    } else {
+        namesArray = @[@"姓",@"姓",@"姓",@"姓"];
+    }
+    return namesArray;
 }
 
 @end

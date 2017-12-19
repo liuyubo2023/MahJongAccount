@@ -8,14 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol SettingViewControllerDelegate
-
-- (void)sendNames:(NSArray *)names;
-
-@end
-
 @interface SettingViewController : UIViewController
-
-@property (nonatomic, weak) id <SettingViewControllerDelegate> delegate;
 
 @end

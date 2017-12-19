@@ -20,8 +20,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 @interface ViewController () <
     UICollectionViewDelegate,
     UICollectionViewDataSource,
-    UICollectionViewDelegateFlowLayout,
-    SettingViewControllerDelegate
+    UICollectionViewDelegateFlowLayout
 >
 
 @property (nonatomic, strong) AVSpeechSynthesizer *synthesizer;
@@ -34,7 +33,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
 @property (nonatomic, strong) NSMutableArray *countArray;  //计数的数组
 
-@property (nonatomic, copy) NSArray *callBackNames;
+@property (nonatomic, copy) NSArray *namesArray;
 
 @end
 
@@ -76,15 +75,13 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MJCollectionViewCell *cell = (MJCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kCollectionCell forIndexPath:indexPath];
+    [[FileManager defaultManager] loadGames];
+    self.namesArray = [[FileManager defaultManager] loadNames];
     self.bankerCount = [[[FileManager defaultManager].games peek] bankerCount];
     self.countArray = [[[FileManager defaultManager].games peek] countArray];
     switch (indexPath.row) {
         case 0 ... 3: {
-            if (self.callBackNames.count == 4) {
-                cell.textField.text = self.callBackNames[indexPath.row];
-            } else {
-                cell.textField.text = @"姓";
-            }
+            cell.textField.text = self.namesArray[indexPath.row];
             if (indexPath.row == _bankerCount % 4) {
                 cell.textField.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleDiagonal withFrame:cell.frame andColors:@[[UIColor flatGreenColor], [UIColor flatRedColor], [UIColor flatYellowColor]]];
             } else {
@@ -182,7 +179,6 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
 - (void)TapToSettingVC {
     SettingViewController *vc = [[SettingViewController alloc] init];
-    vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -213,12 +209,6 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
         _countArray = [NSMutableArray arrayWithObjects:@0,@0,@0,@0,@0,@0,@0,@0, nil];
     }
     return _countArray;
-}
-
-#pragma mark - delegate
-- (void)sendNames:(NSArray *)names {
-    self.callBackNames = [names copy];
-    [self.collectionView reloadData];
 }
 
 @end
