@@ -122,12 +122,4 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
     }
 }
 
-#pragma mark - getters
-- (NSMutableArray *)namesMutableArray {
-    if (!_namesMutableArray) {
-        _namesMutableArray = [@[@"", @"", @"", @""] mutableCopy];
-    }
-    return _namesMutableArray;
-}
-
 @end
