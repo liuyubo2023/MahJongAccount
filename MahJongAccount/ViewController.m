@@ -12,6 +12,8 @@
 #import "SettingViewController.h"
 #import "FileManager.h"
 
+#import "Chameleon.h"
+
 static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
 @interface ViewController () <
@@ -79,14 +81,14 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
                 cell.textField.text = @"姓";
             }
             if (indexPath.row == _bankerCount % 4) {
-                cell.textField.backgroundColor = [UIColor redColor];
+                cell.textField.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleDiagonal withFrame:cell.frame andColors:@[[UIColor flatGreenColor], [UIColor flatRedColor], [UIColor flatYellowColor]]];
             } else {
-                cell.textField.backgroundColor = [UIColor purpleColor];
+                cell.textField.backgroundColor = [UIColor flatMintColor];
             }
         }
             break;
         case 4 ... 11:
-            cell.textField.backgroundColor = [UIColor brownColor];
+            cell.textField.backgroundColor = [UIColor flatBlueColor];
             cell.textField.text = [NSString stringWithFormat:@"%d",([self.countArray[indexPath.row - 4] intValue] * 2)];
             break;
         case 12 ... 15:
@@ -99,7 +101,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
             break;
         case 20 ... 23:
             cell.textField.text = @"杠";
-            cell.textField.backgroundColor = [UIColor magentaColor];
+            cell.textField.backgroundColor = [UIColor flatPinkColor];
             break;
         
         default:
