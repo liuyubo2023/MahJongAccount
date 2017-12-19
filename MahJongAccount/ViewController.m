@@ -180,6 +180,8 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
 - (void)tapRevoke {
     [[FileManager defaultManager].games pop];
+    GameModel *game = [FileManager defaultManager].games.peek;
+    self.countArray = game.countArray;
     [self.collectionView reloadData];
 }
 

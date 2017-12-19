@@ -38,7 +38,7 @@
 
 - (NSMutableArray *)calculateWithWinType:(WinType)winType winnerNum:(NSUInteger)winnerNum bankerNum:(NSUInteger)bankerNum {
     NSArray *presentArray = [self presentGameWithWinType:winType winnerNum:winnerNum bankerNum:bankerNum];
-    self.totalMutableArray = [[[FileManager defaultManager].games peek] countArray];
+    self.totalMutableArray = [[[[FileManager defaultManager].games peek] countArray] mutableCopy];
     for (int i = 0; i < 4; i++) {
         self.totalMutableArray[i] = @([self.totalMutableArray[i] intValue] + [presentArray[i] intValue]);
         self.totalMutableArray[i+4] = presentArray[i];
