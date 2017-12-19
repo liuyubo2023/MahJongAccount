@@ -66,12 +66,12 @@
 - (void)push:(id)object {
     if (self.isFull && self.maxSize) {
         [self removeFirstObject];
+    }
+    
+    if (object != nil) {
+        [self.stackArray addObject:object];
     } else {
-        if (object != nil) {
-            [self.stackArray addObject:object];
-        } else {
-            NSAssert(object != nil, @"Can't push nil to stack!");
-        }
+        NSAssert(object != nil, @"Can't push nil to stack!");
     }
 }
 
