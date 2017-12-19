@@ -24,6 +24,7 @@
 		3C99EBC51FD6F6B000140A48 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C99EBC41FD6F6B000140A48 /* AVFoundation.framework */; };
 		3CACEA831FE2CCBE00700C15 /* GamerNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CACEA811FE2CCBE00700C15 /* GamerNameTableViewCell.m */; };
 		3CACEA841FE2CCBE00700C15 /* GamerNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CACEA821FE2CCBE00700C15 /* GamerNameTableViewCell.xib */; };
+		3CC16E951FE9578D002DF6BE /* MJAlertUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16E941FE9578D002DF6BE /* MJAlertUtils.m */; };
 		4C9C761A1FE7E5D700DEC6F0 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C76131FE7E5D700DEC6F0 /* Stack.m */; };
 		4C9C761B1FE7E5D700DEC6F0 /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C76161FE7E5D700DEC6F0 /* FileManager.m */; };
 		4C9C761C1FE7E5D700DEC6F0 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C76181FE7E5D700DEC6F0 /* GameModel.m */; };
@@ -92,6 +93,8 @@
 		3CACEA801FE2CCBE00700C15 /* GamerNameTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamerNameTableViewCell.h; sourceTree = "<group>"; };
 		3CACEA811FE2CCBE00700C15 /* GamerNameTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamerNameTableViewCell.m; sourceTree = "<group>"; };
 		3CACEA821FE2CCBE00700C15 /* GamerNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamerNameTableViewCell.xib; sourceTree = "<group>"; };
+		3CC16E931FE9578D002DF6BE /* MJAlertUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJAlertUtils.h; sourceTree = "<group>"; };
+		3CC16E941FE9578D002DF6BE /* MJAlertUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJAlertUtils.m; sourceTree = "<group>"; };
 		4C9C76121FE7E5D700DEC6F0 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
 		4C9C76131FE7E5D700DEC6F0 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		4C9C76141FE7E5D700DEC6F0 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 				3CACEA801FE2CCBE00700C15 /* GamerNameTableViewCell.h */,
 				3CACEA811FE2CCBE00700C15 /* GamerNameTableViewCell.m */,
 				3CACEA821FE2CCBE00700C15 /* GamerNameTableViewCell.xib */,
+				3CC16E931FE9578D002DF6BE /* MJAlertUtils.h */,
+				3CC16E941FE9578D002DF6BE /* MJAlertUtils.m */,
 				3C7723CF1FDEBCD900CF1501 /* CalculateNumUtils.h */,
 				3C7723D01FDEBCD900CF1501 /* CalculateNumUtils.m */,
 				3C99EBC01FD5B02200140A48 /* UIViewController+DismissKeyboard.h */,
@@ -430,6 +435,7 @@
 				3C99EB8B1FD58A8B00140A48 /* ViewController.m in Sources */,
 				4C9C76751FE941CB00DEC6F0 /* UIButton+Chameleon.m in Sources */,
 				4C9C76731FE941CB00DEC6F0 /* ChameleonConstants.m in Sources */,
+				3CC16E951FE9578D002DF6BE /* MJAlertUtils.m in Sources */,
 				4C9C76781FE941CB00DEC6F0 /* NSArray+Chameleon.m in Sources */,
 				4C9C761B1FE7E5D700DEC6F0 /* FileManager.m in Sources */,
 				3C99EB961FD58A8B00140A48 /* main.m in Sources */,

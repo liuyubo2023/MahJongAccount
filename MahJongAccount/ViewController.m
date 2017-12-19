@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MJCollectionViewCell.h"
+#import "MJAlertUtils.h"
 #import "CalculateNumUtils.h"
 #import "SettingViewController.h"
 #import "FileManager.h"
@@ -180,9 +181,13 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 }
 
 - (void)tapRevoke {
-    [[FileManager defaultManager].games pop];
-    [[FileManager defaultManager] saveGame];
-    [self.collectionView reloadData];
+    [MJAlertUtils showAlertWithTitle:@"回撤" msg:@"你确定回撤到上步操作" buttonsStatement:@[@"取消",@"回撤"] chooseBlock:^(NSInteger buttonIdx) {
+        if (buttonIdx == 1) {
+            [[FileManager defaultManager].games pop];
+            [[FileManager defaultManager] saveGame];
+            [self.collectionView reloadData];
+        }
+    }];
 }
 
 //语音播报
