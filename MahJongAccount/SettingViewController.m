@@ -8,6 +8,8 @@
 
 #import "SettingViewController.h"
 #import "GamerNameTableViewCell.h"
+#import "FileManager.h"
+#import "MJAlertUtils.h"
 
 static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
 
@@ -37,6 +39,13 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section == 1) {
+        return 76;
+    }
+    return 12;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] init];
     if (indexPath.section == 0) {
@@ -53,6 +62,19 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    if (section == 1) {
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(16, 40, CGRectGetWidth([UIScreen mainScreen].bounds) - 32, 44)];
+        [button setBackgroundColor:UIColorFromRGB(0xed5565)];
+        [button setTitle:@"清除数据" forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(didTapClearGameInfo) forControlEvents:UIControlEventTouchUpInside];
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), 56)];
+        [view addSubview:button];
+        return view;
+    }
+    return nil;
+}
+
 #pragma mark - private methods
 - (void)setupTableView {
     [self.tableView registerNib:[UINib nibWithNibName:KGamerNameTableViewCell bundle:nil] forCellReuseIdentifier:KGamerNameTableViewCell];
@@ -63,6 +85,16 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
 - (void)didTapDone:(id)sender {
     [self.delegate sendNames:self.callBackNames];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)didTapClearGameInfo {
+    [MJAlertUtils showAlertWithTitle:nil msg:@"你确定清除所有数据" buttonsStatement:@[@"取消",@"清除"] chooseBlock:^(NSInteger buttonIdx) {
+        if (buttonIdx == 1) {
+            [[FileManager defaultManager].games clear];
+            [[FileManager defaultManager] saveGame];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
 }
 
 - (void)textFieldTextChanged:(UITextField *)textField {

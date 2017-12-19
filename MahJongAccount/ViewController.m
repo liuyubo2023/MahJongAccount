@@ -51,6 +51,12 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
     self.synthesizer = [[AVSpeechSynthesizer alloc] init];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.collectionView reloadData];
+}
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
