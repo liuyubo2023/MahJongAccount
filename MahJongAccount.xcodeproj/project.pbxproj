@@ -42,6 +42,7 @@
 		4C9C767D1FE941CB00DEC6F0 /* UIImage+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C766C1FE941CB00DEC6F0 /* UIImage+ChameleonPrivate.m */; };
 		4C9C767E1FE941CB00DEC6F0 /* Info copy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C766E1FE941CB00DEC6F0 /* Info copy.plist */; };
 		4C9C767F1FE941CB00DEC6F0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C76711FE941CB00DEC6F0 /* Info.plist */; };
+		4C9C76861FEB9F2600DEC6F0 /* dice.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C76851FEB9F2600DEC6F0 /* dice.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		4C9C766F1FE941CB00DEC6F0 /* Chameleon_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chameleon_.h; sourceTree = "<group>"; };
 		4C9C76701FE941CB00DEC6F0 /* UIView+ChameleonPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ChameleonPrivate.h"; sourceTree = "<group>"; };
 		4C9C76711FE941CB00DEC6F0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C9C76851FEB9F2600DEC6F0 /* dice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				3C99EBC11FD5B02200140A48 /* UIViewController+DismissKeyboard.m */,
 				3C99EB8F1FD58A8B00140A48 /* Assets.xcassets */,
 				3C99EB911FD58A8B00140A48 /* LaunchScreen.storyboard */,
+				4C9C76851FEB9F2600DEC6F0 /* dice.png */,
 				3C99EBBF1FD5A6B300140A48 /* MahJongAccount-Prefix.pch */,
 				3C99EB941FD58A8B00140A48 /* Info.plist */,
 				3C99EB951FD58A8B00140A48 /* main.m */,
@@ -397,6 +400,7 @@
 				4C9C767E1FE941CB00DEC6F0 /* Info copy.plist in Resources */,
 				3C99EB931FD58A8B00140A48 /* LaunchScreen.storyboard in Resources */,
 				3CACEA841FE2CCBE00700C15 /* GamerNameTableViewCell.xib in Resources */,
+				4C9C76861FEB9F2600DEC6F0 /* dice.png in Resources */,
 				3C7723D61FE2B9FC00CF1501 /* SettingViewController.xib in Resources */,
 				3C99EBB91FD58FFE00140A48 /* ViewController.xib in Resources */,
 				3C99EB901FD58A8B00140A48 /* Assets.xcassets in Resources */,

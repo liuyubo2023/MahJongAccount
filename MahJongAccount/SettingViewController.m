@@ -48,11 +48,15 @@ static NSString *const kGamesSaving = @"Games";
     return 12;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] init];
     if (indexPath.section == 0) {
         GamerNameTableViewCell *nameCell = (GamerNameTableViewCell *)[tableView dequeueReusableCellWithIdentifier:KGamerNameTableViewCell forIndexPath:indexPath];
-        nameCell.nameLabel.text = [NSString stringWithFormat:@"第%lu列的名字",indexPath.row];
+        nameCell.nameLabel.text = [NSString stringWithFormat:@"第%lu列的名字",indexPath.row+1];
         nameCell.nameTextField.text = self.namesMutableArray[indexPath.row];
         nameCell.nameTextField.tag = indexPath.row;
         nameCell.nameTextField.delegate = self;
