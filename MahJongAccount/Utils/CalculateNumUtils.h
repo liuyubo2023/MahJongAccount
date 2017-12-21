@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ViewController.h"
 
 @interface CalculateNumUtils : NSObject
 

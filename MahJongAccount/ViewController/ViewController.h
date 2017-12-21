@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, WinType) {
-    winTypeHu,
-    winTypeZimo,
-    winTypeGang
-};
-
 @interface ViewController : UIViewController
 
 

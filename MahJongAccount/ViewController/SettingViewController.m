@@ -12,8 +12,6 @@
 #import "MJAlertUtils.h"
 
 static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
-static NSString *const kNamesSaving = @"Names";
-static NSString *const kGamesSaving = @"Games";
 
 @interface SettingViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

@@ -25,6 +25,7 @@
 		3CFCE4B81FEBFAB80031CA7F /* UIViewController+DismissKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE4B31FEBFAB70031CA7F /* UIViewController+DismissKeyboard.m */; };
 		3CFCE4B91FEBFAB80031CA7F /* CalculateNumUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE4B51FEBFAB70031CA7F /* CalculateNumUtils.m */; };
 		3CFCE4BA1FEBFAB80031CA7F /* MJAlertUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE4B61FEBFAB70031CA7F /* MJAlertUtils.m */; };
+		3CFCE4C11FEBFC5B0031CA7F /* MJConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE4C01FEBFC5B0031CA7F /* MJConstants.m */; };
 		4C9C761A1FE7E5D700DEC6F0 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C76131FE7E5D700DEC6F0 /* Stack.m */; };
 		4C9C761B1FE7E5D700DEC6F0 /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C76161FE7E5D700DEC6F0 /* FileManager.m */; };
 		4C9C761C1FE7E5D700DEC6F0 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C76181FE7E5D700DEC6F0 /* GameModel.m */; };
@@ -96,6 +97,8 @@
 		3CFCE4B51FEBFAB70031CA7F /* CalculateNumUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculateNumUtils.m; sourceTree = "<group>"; };
 		3CFCE4B61FEBFAB70031CA7F /* MJAlertUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJAlertUtils.m; sourceTree = "<group>"; };
 		3CFCE4B71FEBFAB70031CA7F /* UIViewController+DismissKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DismissKeyboard.h"; sourceTree = "<group>"; };
+		3CFCE4BF1FEBFC5B0031CA7F /* MJConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJConstants.h; sourceTree = "<group>"; };
+		3CFCE4C01FEBFC5B0031CA7F /* MJConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJConstants.m; sourceTree = "<group>"; };
 		4C9C76121FE7E5D700DEC6F0 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
 		4C9C76131FE7E5D700DEC6F0 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		4C9C76141FE7E5D700DEC6F0 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 		3CFCE4BB1FEBFADF0031CA7F /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				3CFCE4BF1FEBFC5B0031CA7F /* MJConstants.h */,
+				3CFCE4C01FEBFC5B0031CA7F /* MJConstants.m */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				4C9C76781FE941CB00DEC6F0 /* NSArray+Chameleon.m in Sources */,
 				3CFCE4A31FEBFA330031CA7F /* SettingViewController.m in Sources */,
 				3CFCE4BA1FEBFAB80031CA7F /* MJAlertUtils.m in Sources */,
+				3CFCE4C11FEBFC5B0031CA7F /* MJConstants.m in Sources */,
 				4C9C761B1FE7E5D700DEC6F0 /* FileManager.m in Sources */,
 				3CFCE4AE1FEBFA730031CA7F /* GamerNameTableViewCell.m in Sources */,
 				3C99EB961FD58A8B00140A48 /* main.m in Sources */,

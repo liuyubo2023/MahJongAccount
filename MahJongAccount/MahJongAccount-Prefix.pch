@@ -9,8 +9,8 @@
 #ifndef MahJongAccount_Prefix_pch
 #define MahJongAccount_Prefix_pch
 
+#import "MJConstants.h"
 #import <AVFoundation/AVFoundation.h>
-
 #import "UIViewController+DismissKeyboard.h"
 
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width

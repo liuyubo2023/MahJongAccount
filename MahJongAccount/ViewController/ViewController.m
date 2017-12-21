@@ -16,8 +16,6 @@
 #import "Chameleon.h"
 
 static NSString *const kCollectionCell = @"MJCollectionViewCell";
-static NSString *const kGamesSaving = @"Games";
-static NSString *const kNamesSaving = @"Names";
 
 @interface ViewController () <
     UICollectionViewDelegate,

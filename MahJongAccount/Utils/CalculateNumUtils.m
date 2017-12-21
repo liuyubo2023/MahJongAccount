@@ -9,8 +9,6 @@
 #import "CalculateNumUtils.h"
 #import "FileManager.h"
 
-static NSString *const kGamesSaving = @"Games";
-
 @interface CalculateNumUtils()
 
 @property (nonatomic, strong) NSMutableArray *totalMutableArray;
