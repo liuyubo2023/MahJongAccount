@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "Chameleon.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,9 @@
     [self.navigationController pushViewController:vc animated:YES];
     [self.window setRootViewController:self.navigationController];
     [self.window makeKeyAndVisible];
+    
+    [Chameleon setGlobalThemeUsingPrimaryColor:[UIColor flatMintColor] withContentStyle:UIContentStyleLight];
+    
     return YES;
 }
 

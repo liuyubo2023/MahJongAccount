@@ -44,7 +44,7 @@ static NSString *const kNamesSaving = @"Names";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"计算";
+    self.title = @"账单计算器";
     [self setupCollectionView];
     [self setupLeftBarButton];
     [self setupRightBarButton];
