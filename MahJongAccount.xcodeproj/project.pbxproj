@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C7723D11FDEBCD900CF1501 /* CalculateNumUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7723D01FDEBCD900CF1501 /* CalculateNumUtils.m */; };
-		3C7723D51FE2B9FC00CF1501 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7723D31FE2B9FC00CF1501 /* SettingViewController.m */; };
-		3C7723D61FE2B9FC00CF1501 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C7723D41FE2B9FC00CF1501 /* SettingViewController.xib */; };
 		3C99EB881FD58A8B00140A48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EB871FD58A8B00140A48 /* AppDelegate.m */; };
-		3C99EB8B1FD58A8B00140A48 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EB8A1FD58A8B00140A48 /* ViewController.m */; };
 		3C99EB901FD58A8B00140A48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C99EB8F1FD58A8B00140A48 /* Assets.xcassets */; };
 		3C99EB931FD58A8B00140A48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C99EB911FD58A8B00140A48 /* LaunchScreen.storyboard */; };
 		3C99EB961FD58A8B00140A48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EB951FD58A8B00140A48 /* main.m */; };
 		3C99EBA01FD58A8B00140A48 /* MahJongAccountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EB9F1FD58A8B00140A48 /* MahJongAccountTests.m */; };
 		3C99EBAB1FD58A8B00140A48 /* MahJongAccountUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EBAA1FD58A8B00140A48 /* MahJongAccountUITests.m */; };
-		3C99EBB91FD58FFE00140A48 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C99EBB81FD58FFE00140A48 /* ViewController.xib */; };
-		3C99EBBD1FD59DA500140A48 /* MJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EBBB1FD59DA500140A48 /* MJCollectionViewCell.m */; };
-		3C99EBBE1FD59DA500140A48 /* MJCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C99EBBC1FD59DA500140A48 /* MJCollectionViewCell.xib */; };
-		3C99EBC21FD5B02200140A48 /* UIViewController+DismissKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EBC11FD5B02200140A48 /* UIViewController+DismissKeyboard.m */; };
 		3C99EBC51FD6F6B000140A48 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C99EBC41FD6F6B000140A48 /* AVFoundation.framework */; };
-		3CACEA831FE2CCBE00700C15 /* GamerNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CACEA811FE2CCBE00700C15 /* GamerNameTableViewCell.m */; };
-		3CACEA841FE2CCBE00700C15 /* GamerNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CACEA821FE2CCBE00700C15 /* GamerNameTableViewCell.xib */; };
-		3CC16E951FE9578D002DF6BE /* MJAlertUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16E941FE9578D002DF6BE /* MJAlertUtils.m */; };
+		3CFCE4A21FEBFA330031CA7F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCE49C1FEBFA330031CA7F /* ViewController.xib */; };
+		3CFCE4A31FEBFA330031CA7F /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE49F1FEBFA330031CA7F /* SettingViewController.m */; };
+		3CFCE4A41FEBFA330031CA7F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE4A01FEBFA330031CA7F /* ViewController.m */; };
+		3CFCE4A51FEBFA330031CA7F /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCE4A11FEBFA330031CA7F /* SettingViewController.xib */; };
+		3CFCE4AD1FEBFA730031CA7F /* GamerNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCE4A71FEBFA730031CA7F /* GamerNameTableViewCell.xib */; };
+		3CFCE4AE1FEBFA730031CA7F /* GamerNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE4A91FEBFA730031CA7F /* GamerNameTableViewCell.m */; };
+		3CFCE4AF1FEBFA730031CA7F /* MJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE4AB1FEBFA730031CA7F /* MJCollectionViewCell.m */; };
+		3CFCE4B01FEBFA730031CA7F /* MJCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCE4AC1FEBFA730031CA7F /* MJCollectionViewCell.xib */; };
+		3CFCE4B81FEBFAB80031CA7F /* UIViewController+DismissKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE4B31FEBFAB70031CA7F /* UIViewController+DismissKeyboard.m */; };
+		3CFCE4B91FEBFAB80031CA7F /* CalculateNumUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE4B51FEBFAB70031CA7F /* CalculateNumUtils.m */; };
+		3CFCE4BA1FEBFAB80031CA7F /* MJAlertUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE4B61FEBFAB70031CA7F /* MJAlertUtils.m */; };
 		4C9C761A1FE7E5D700DEC6F0 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C76131FE7E5D700DEC6F0 /* Stack.m */; };
 		4C9C761B1FE7E5D700DEC6F0 /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C76161FE7E5D700DEC6F0 /* FileManager.m */; };
 		4C9C761C1FE7E5D700DEC6F0 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C76181FE7E5D700DEC6F0 /* GameModel.m */; };
@@ -63,16 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3C7723CF1FDEBCD900CF1501 /* CalculateNumUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculateNumUtils.h; sourceTree = "<group>"; };
-		3C7723D01FDEBCD900CF1501 /* CalculateNumUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculateNumUtils.m; sourceTree = "<group>"; };
-		3C7723D21FE2B9FC00CF1501 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		3C7723D31FE2B9FC00CF1501 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
-		3C7723D41FE2B9FC00CF1501 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		3C99EB831FD58A8B00140A48 /* MahJongAccount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MahJongAccount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C99EB861FD58A8B00140A48 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C99EB871FD58A8B00140A48 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3C99EB891FD58A8B00140A48 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3C99EB8A1FD58A8B00140A48 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3C99EB8F1FD58A8B00140A48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C99EB921FD58A8B00140A48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C99EB941FD58A8B00140A48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,19 +76,26 @@
 		3C99EBA61FD58A8B00140A48 /* MahJongAccountUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MahJongAccountUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C99EBAA1FD58A8B00140A48 /* MahJongAccountUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MahJongAccountUITests.m; sourceTree = "<group>"; };
 		3C99EBAC1FD58A8B00140A48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C99EBB81FD58FFE00140A48 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		3C99EBBA1FD59DA500140A48 /* MJCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJCollectionViewCell.h; sourceTree = "<group>"; };
-		3C99EBBB1FD59DA500140A48 /* MJCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJCollectionViewCell.m; sourceTree = "<group>"; };
-		3C99EBBC1FD59DA500140A48 /* MJCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MJCollectionViewCell.xib; sourceTree = "<group>"; };
 		3C99EBBF1FD5A6B300140A48 /* MahJongAccount-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MahJongAccount-Prefix.pch"; sourceTree = "<group>"; };
-		3C99EBC01FD5B02200140A48 /* UIViewController+DismissKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DismissKeyboard.h"; sourceTree = "<group>"; };
-		3C99EBC11FD5B02200140A48 /* UIViewController+DismissKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DismissKeyboard.m"; sourceTree = "<group>"; };
 		3C99EBC41FD6F6B000140A48 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		3CACEA801FE2CCBE00700C15 /* GamerNameTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamerNameTableViewCell.h; sourceTree = "<group>"; };
-		3CACEA811FE2CCBE00700C15 /* GamerNameTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamerNameTableViewCell.m; sourceTree = "<group>"; };
-		3CACEA821FE2CCBE00700C15 /* GamerNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamerNameTableViewCell.xib; sourceTree = "<group>"; };
-		3CC16E931FE9578D002DF6BE /* MJAlertUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJAlertUtils.h; sourceTree = "<group>"; };
-		3CC16E941FE9578D002DF6BE /* MJAlertUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJAlertUtils.m; sourceTree = "<group>"; };
+		3CFCE49C1FEBFA330031CA7F /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		3CFCE49D1FEBFA330031CA7F /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		3CFCE49E1FEBFA330031CA7F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3CFCE49F1FEBFA330031CA7F /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		3CFCE4A01FEBFA330031CA7F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3CFCE4A11FEBFA330031CA7F /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		3CFCE4A71FEBFA730031CA7F /* GamerNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GamerNameTableViewCell.xib; sourceTree = "<group>"; };
+		3CFCE4A81FEBFA730031CA7F /* GamerNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamerNameTableViewCell.h; sourceTree = "<group>"; };
+		3CFCE4A91FEBFA730031CA7F /* GamerNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamerNameTableViewCell.m; sourceTree = "<group>"; };
+		3CFCE4AA1FEBFA730031CA7F /* MJCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCollectionViewCell.h; sourceTree = "<group>"; };
+		3CFCE4AB1FEBFA730031CA7F /* MJCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCollectionViewCell.m; sourceTree = "<group>"; };
+		3CFCE4AC1FEBFA730031CA7F /* MJCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJCollectionViewCell.xib; sourceTree = "<group>"; };
+		3CFCE4B21FEBFAB70031CA7F /* CalculateNumUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculateNumUtils.h; sourceTree = "<group>"; };
+		3CFCE4B31FEBFAB70031CA7F /* UIViewController+DismissKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DismissKeyboard.m"; sourceTree = "<group>"; };
+		3CFCE4B41FEBFAB70031CA7F /* MJAlertUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJAlertUtils.h; sourceTree = "<group>"; };
+		3CFCE4B51FEBFAB70031CA7F /* CalculateNumUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculateNumUtils.m; sourceTree = "<group>"; };
+		3CFCE4B61FEBFAB70031CA7F /* MJAlertUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJAlertUtils.m; sourceTree = "<group>"; };
+		3CFCE4B71FEBFAB70031CA7F /* UIViewController+DismissKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DismissKeyboard.h"; sourceTree = "<group>"; };
 		4C9C76121FE7E5D700DEC6F0 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
 		4C9C76131FE7E5D700DEC6F0 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		4C9C76141FE7E5D700DEC6F0 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
@@ -184,28 +184,14 @@
 		3C99EB851FD58A8B00140A48 /* MahJongAccount */ = {
 			isa = PBXGroup;
 			children = (
-				4C9C76541FE941CB00DEC6F0 /* Chameleon */,
-				4C9C76111FE7E5D700DEC6F0 /* Model */,
 				3C99EB861FD58A8B00140A48 /* AppDelegate.h */,
 				3C99EB871FD58A8B00140A48 /* AppDelegate.m */,
-				3C99EB891FD58A8B00140A48 /* ViewController.h */,
-				3C99EB8A1FD58A8B00140A48 /* ViewController.m */,
-				3C99EBB81FD58FFE00140A48 /* ViewController.xib */,
-				3C7723D21FE2B9FC00CF1501 /* SettingViewController.h */,
-				3C7723D31FE2B9FC00CF1501 /* SettingViewController.m */,
-				3C7723D41FE2B9FC00CF1501 /* SettingViewController.xib */,
-				3C99EBBA1FD59DA500140A48 /* MJCollectionViewCell.h */,
-				3C99EBBB1FD59DA500140A48 /* MJCollectionViewCell.m */,
-				3C99EBBC1FD59DA500140A48 /* MJCollectionViewCell.xib */,
-				3CACEA801FE2CCBE00700C15 /* GamerNameTableViewCell.h */,
-				3CACEA811FE2CCBE00700C15 /* GamerNameTableViewCell.m */,
-				3CACEA821FE2CCBE00700C15 /* GamerNameTableViewCell.xib */,
-				3CC16E931FE9578D002DF6BE /* MJAlertUtils.h */,
-				3CC16E941FE9578D002DF6BE /* MJAlertUtils.m */,
-				3C7723CF1FDEBCD900CF1501 /* CalculateNumUtils.h */,
-				3C7723D01FDEBCD900CF1501 /* CalculateNumUtils.m */,
-				3C99EBC01FD5B02200140A48 /* UIViewController+DismissKeyboard.h */,
-				3C99EBC11FD5B02200140A48 /* UIViewController+DismissKeyboard.m */,
+				3CFCE49B1FEBF9D70031CA7F /* ViewController */,
+				4C9C76111FE7E5D700DEC6F0 /* Model */,
+				3CFCE4A61FEBFA490031CA7F /* View */,
+				3CFCE4BB1FEBFADF0031CA7F /* Constants */,
+				3CFCE4B11FEBFA7D0031CA7F /* Utils */,
+				4C9C76541FE941CB00DEC6F0 /* Chameleon */,
 				3C99EB8F1FD58A8B00140A48 /* Assets.xcassets */,
 				3C99EB911FD58A8B00140A48 /* LaunchScreen.storyboard */,
 				4C9C76851FEB9F2600DEC6F0 /* dice.png */,
@@ -240,6 +226,52 @@
 				3C99EBC41FD6F6B000140A48 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3CFCE49B1FEBF9D70031CA7F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3CFCE49D1FEBFA330031CA7F /* SettingViewController.h */,
+				3CFCE49F1FEBFA330031CA7F /* SettingViewController.m */,
+				3CFCE4A11FEBFA330031CA7F /* SettingViewController.xib */,
+				3CFCE49E1FEBFA330031CA7F /* ViewController.h */,
+				3CFCE4A01FEBFA330031CA7F /* ViewController.m */,
+				3CFCE49C1FEBFA330031CA7F /* ViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3CFCE4A61FEBFA490031CA7F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3CFCE4A81FEBFA730031CA7F /* GamerNameTableViewCell.h */,
+				3CFCE4A91FEBFA730031CA7F /* GamerNameTableViewCell.m */,
+				3CFCE4A71FEBFA730031CA7F /* GamerNameTableViewCell.xib */,
+				3CFCE4AA1FEBFA730031CA7F /* MJCollectionViewCell.h */,
+				3CFCE4AB1FEBFA730031CA7F /* MJCollectionViewCell.m */,
+				3CFCE4AC1FEBFA730031CA7F /* MJCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3CFCE4B11FEBFA7D0031CA7F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3CFCE4B21FEBFAB70031CA7F /* CalculateNumUtils.h */,
+				3CFCE4B51FEBFAB70031CA7F /* CalculateNumUtils.m */,
+				3CFCE4B41FEBFAB70031CA7F /* MJAlertUtils.h */,
+				3CFCE4B61FEBFAB70031CA7F /* MJAlertUtils.m */,
+				3CFCE4B71FEBFAB70031CA7F /* UIViewController+DismissKeyboard.h */,
+				3CFCE4B31FEBFAB70031CA7F /* UIViewController+DismissKeyboard.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3CFCE4BB1FEBFADF0031CA7F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		4C9C76111FE7E5D700DEC6F0 /* Model */ = {
@@ -398,13 +430,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C9C767E1FE941CB00DEC6F0 /* Info copy.plist in Resources */,
+				3CFCE4A51FEBFA330031CA7F /* SettingViewController.xib in Resources */,
 				3C99EB931FD58A8B00140A48 /* LaunchScreen.storyboard in Resources */,
-				3CACEA841FE2CCBE00700C15 /* GamerNameTableViewCell.xib in Resources */,
+				3CFCE4AD1FEBFA730031CA7F /* GamerNameTableViewCell.xib in Resources */,
+				3CFCE4A21FEBFA330031CA7F /* ViewController.xib in Resources */,
+				3CFCE4B01FEBFA730031CA7F /* MJCollectionViewCell.xib in Resources */,
 				4C9C76861FEB9F2600DEC6F0 /* dice.png in Resources */,
-				3C7723D61FE2B9FC00CF1501 /* SettingViewController.xib in Resources */,
-				3C99EBB91FD58FFE00140A48 /* ViewController.xib in Resources */,
 				3C99EB901FD58A8B00140A48 /* Assets.xcassets in Resources */,
-				3C99EBBE1FD59DA500140A48 /* MJCollectionViewCell.xib in Resources */,
 				4C9C767F1FE941CB00DEC6F0 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,25 +467,25 @@
 				4C9C76791FE941CB00DEC6F0 /* UINavigationController+Chameleon.m in Sources */,
 				4C9C767B1FE941CB00DEC6F0 /* UIViewController+Chameleon.m in Sources */,
 				4C9C767C1FE941CB00DEC6F0 /* UIAppearance+Swift.m in Sources */,
-				3C99EBC21FD5B02200140A48 /* UIViewController+DismissKeyboard.m in Sources */,
-				3C99EB8B1FD58A8B00140A48 /* ViewController.m in Sources */,
 				4C9C76751FE941CB00DEC6F0 /* UIButton+Chameleon.m in Sources */,
 				4C9C76731FE941CB00DEC6F0 /* ChameleonConstants.m in Sources */,
-				3CC16E951FE9578D002DF6BE /* MJAlertUtils.m in Sources */,
 				4C9C76781FE941CB00DEC6F0 /* NSArray+Chameleon.m in Sources */,
+				3CFCE4A31FEBFA330031CA7F /* SettingViewController.m in Sources */,
+				3CFCE4BA1FEBFAB80031CA7F /* MJAlertUtils.m in Sources */,
 				4C9C761B1FE7E5D700DEC6F0 /* FileManager.m in Sources */,
+				3CFCE4AE1FEBFA730031CA7F /* GamerNameTableViewCell.m in Sources */,
 				3C99EB961FD58A8B00140A48 /* main.m in Sources */,
-				3CACEA831FE2CCBE00700C15 /* GamerNameTableViewCell.m in Sources */,
 				4C9C76721FE941CB00DEC6F0 /* UIColor+ChameleonPrivate.m in Sources */,
+				3CFCE4AF1FEBFA730031CA7F /* MJCollectionViewCell.m in Sources */,
+				3CFCE4B81FEBFAB80031CA7F /* UIViewController+DismissKeyboard.m in Sources */,
 				4C9C76761FE941CB00DEC6F0 /* UIView+ChameleonPrivate.m in Sources */,
 				4C9C76741FE941CB00DEC6F0 /* UIColor+Chameleon.m in Sources */,
-				3C7723D51FE2B9FC00CF1501 /* SettingViewController.m in Sources */,
 				4C9C767D1FE941CB00DEC6F0 /* UIImage+ChameleonPrivate.m in Sources */,
+				3CFCE4B91FEBFAB80031CA7F /* CalculateNumUtils.m in Sources */,
+				3CFCE4A41FEBFA330031CA7F /* ViewController.m in Sources */,
 				4C9C76771FE941CB00DEC6F0 /* Chameleon_.m in Sources */,
 				3C99EB881FD58A8B00140A48 /* AppDelegate.m in Sources */,
 				4C9C761C1FE7E5D700DEC6F0 /* GameModel.m in Sources */,
-				3C99EBBD1FD59DA500140A48 /* MJCollectionViewCell.m in Sources */,
-				3C7723D11FDEBCD900CF1501 /* CalculateNumUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
