@@ -12,6 +12,8 @@
 #import "MJAlertUtils.h"
 
 static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
+static NSString *const kNamesSaving = @"Names";
+static NSString *const kGamesSaving = @"Games";
 
 @interface SettingViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -81,22 +83,22 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
 - (void)setupTableView {
     [self.tableView registerNib:[UINib nibWithNibName:KGamerNameTableViewCell bundle:nil] forCellReuseIdentifier:KGamerNameTableViewCell];
     
-    
-    self.namesMutableArray = [[[FileManager defaultManager] loadNames] mutableCopy];
+    self.namesMutableArray = [[[FileManager defaultManager] loadDataForKey:kNamesSaving] mutableCopy];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(didTapDone:)];
 }
 
 - (void)didTapDone:(id)sender {
-    [[FileManager defaultManager] saveNames:[self.namesMutableArray copy]];
+    [[FileManager defaultManager] saveData:self.namesMutableArray forKey:kNamesSaving];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didTapClearGameInfo {
     [MJAlertUtils showAlertWithTitle:nil msg:@"你确定清除所有数据" buttonsStatement:@[@"取消",@"清除"] chooseBlock:^(NSInteger buttonIdx) {
         if (buttonIdx == 1) {
-            [[FileManager defaultManager].games clear];
-            [[FileManager defaultManager] saveGame];
+            Stack *games = [[FileManager defaultManager] loadDataForKey:kGamesSaving];
+            [games clear];
+            [[FileManager defaultManager] saveData:games forKey:kGamesSaving];
             [self.navigationController popViewControllerAnimated:YES];
         }
     }];

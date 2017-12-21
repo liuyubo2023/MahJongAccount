@@ -9,6 +9,8 @@
 #import "CalculateNumUtils.h"
 #import "FileManager.h"
 
+static NSString *const kGamesSaving = @"Games";
+
 @interface CalculateNumUtils()
 
 @property (nonatomic, strong) NSMutableArray *totalMutableArray;
@@ -38,7 +40,8 @@
 
 - (NSMutableArray *)calculateWithWinType:(WinType)winType winnerNum:(NSUInteger)winnerNum bankerNum:(NSUInteger)bankerNum {
     NSArray *presentArray = [self presentGameWithWinType:winType winnerNum:winnerNum bankerNum:bankerNum];
-    self.totalMutableArray = [[[[FileManager defaultManager].games peek] countArray] mutableCopy];
+    Stack *games = [[FileManager defaultManager] loadDataForKey:kGamesSaving];
+    self.totalMutableArray = [[games.peek countArray] mutableCopy];
     for (int i = 0; i < 4; i++) {
         self.totalMutableArray[i] = @([self.totalMutableArray[i] intValue] + [presentArray[i] intValue]);
         self.totalMutableArray[i+4] = presentArray[i];

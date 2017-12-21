@@ -13,16 +13,10 @@
 
 @interface FileManager : NSObject
 
-@property (nonatomic, strong) Stack *games;
-
 + (instancetype)defaultManager;
 
-- (void)saveGame;
+- (void)saveData:(id)data forKey:(NSString *)key;
 
-- (void)loadGames;
-
-- (void)saveNames:(NSArray<NSString *> *)namesArray;
-
-- (NSArray<NSString *> *)loadNames;
+- (id)loadDataForKey:(NSString *)key;
 
 @end

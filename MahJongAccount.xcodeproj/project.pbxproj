@@ -609,7 +609,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GWK9FAR3J2;
+				DEVELOPMENT_TEAM = 86UUNEZV42;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MahJongAccount/MahJongAccount-Prefix.pch";
 				INFOPLIST_FILE = MahJongAccount/Info.plist;
@@ -625,7 +625,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GWK9FAR3J2;
+				DEVELOPMENT_TEAM = 86UUNEZV42;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MahJongAccount/MahJongAccount-Prefix.pch";
 				INFOPLIST_FILE = MahJongAccount/Info.plist;

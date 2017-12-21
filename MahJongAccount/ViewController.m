@@ -16,6 +16,8 @@
 #import "Chameleon.h"
 
 static NSString *const kCollectionCell = @"MJCollectionViewCell";
+static NSString *const kGamesSaving = @"Games";
+static NSString *const kNamesSaving = @"Names";
 
 @interface ViewController () <
     UICollectionViewDelegate,
@@ -75,10 +77,14 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MJCollectionViewCell *cell = (MJCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kCollectionCell forIndexPath:indexPath];
-    [[FileManager defaultManager] loadGames];
-    self.namesArray = [[FileManager defaultManager] loadNames];
-    self.bankerCount = [[[FileManager defaultManager].games peek] bankerCount];
-    self.countArray = [[[FileManager defaultManager].games peek] countArray];
+    Stack *games = [[FileManager defaultManager] loadDataForKey:kGamesSaving];
+    self.namesArray = [[FileManager defaultManager] loadDataForKey:kNamesSaving];
+    if (!self.namesArray) {
+        self.namesArray = @[@"A", @"B", @"C", @"D"];
+        [[FileManager defaultManager] saveData:self.namesArray forKey:kNamesSaving];
+    }
+    self.bankerCount = [games.peek bankerCount];
+    self.countArray = [games.peek countArray];
     switch (indexPath.row) {
         case 0 ... 3: {
             cell.textField.text = self.namesArray[indexPath.row];
@@ -171,12 +177,18 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 }
 
 - (void)saveGameInfo {
-    GameModel *game = [[GameModel alloc] init];
-    game.countArray = _countArray;
-    game.bankerCount = _bankerCount;
+    GameModel *currentGame = [[GameModel alloc] init];
+    currentGame.countArray = _countArray;
+    currentGame.bankerCount = _bankerCount;
     
-    [[FileManager defaultManager].games push:game];
-    [[FileManager defaultManager] saveGame];
+    Stack *games = [[FileManager defaultManager] loadDataForKey:kGamesSaving];
+    
+    if (!games) {
+        games = [[Stack alloc] initWithSize:10];
+    }
+    [games push:currentGame];
+    [[FileManager defaultManager] saveData:games forKey:kGamesSaving];
+    
     [self.collectionView reloadData];
 }
 
@@ -186,10 +198,11 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 }
 
 - (void)tapRevoke {
-    [MJAlertUtils showAlertWithTitle:@"回撤" msg:@"你确定回撤到上步操作" buttonsStatement:@[@"取消",@"回撤"] chooseBlock:^(NSInteger buttonIdx) {
+    [MJAlertUtils showAlertWithTitle:@"回撤" msg:@"确定回撤到上步操作" buttonsStatement:@[@"取消",@"回撤"] chooseBlock:^(NSInteger buttonIdx) {
         if (buttonIdx == 1) {
-            [[FileManager defaultManager].games pop];
-            [[FileManager defaultManager] saveGame];
+            Stack *games = [[FileManager defaultManager] loadDataForKey:kGamesSaving];
+            [games pop];
+            [[FileManager defaultManager] saveData:games forKey:kGamesSaving];
             [self.collectionView reloadData];
         }
     }];

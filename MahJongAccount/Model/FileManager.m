@@ -25,9 +25,6 @@
 
 - (instancetype)initPrivate {
     self = [super init];
-//    if (self) {
-//        [self loadGames];
-//    }
     return self;
 }
 
@@ -37,54 +34,29 @@
     return documentsDirectory;
 }
 
-- (NSString *)dataFilePath {
-    return [[self documentsDirectory] stringByAppendingPathComponent:@"Games.plist"];
+- (NSString *)dataFilePathWithName:(NSString *)name {
+    return [[self documentsDirectory] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", name]];
 }
 
-- (NSString *)nameFilePath {
-    return [[self documentsDirectory] stringByAppendingPathComponent:@"Names.plist"];
-}
-
-- (void)saveGame {
-    NSMutableData *data = [[NSMutableData alloc] init];
-    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-    [archiver encodeObject:self.games forKey:@"Games"];
+#pragma mark - public
+- (void)saveData:(id)data forKey:(NSString *)key {
+    NSMutableData *mutableData = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:mutableData];
+    [archiver encodeObject:data forKey:key];
     [archiver finishEncoding];
-    [data writeToFile:[self dataFilePath] atomically:YES];
+    [mutableData writeToFile:[self dataFilePathWithName:key] atomically:YES];
 }
 
-- (void)loadGames {
-    NSString *path = [self dataFilePath];
+- (id)loadDataForKey:(NSString *)key {
+    NSString *path = [self dataFilePathWithName:key];
     if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
         NSData *data = [[NSData alloc] initWithContentsOfFile:path];
         NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-        self.games = [unarchiver decodeObjectForKey:@"Games"];
+        id unarchivedData = [unarchiver decodeObjectForKey:key];
         [unarchiver finishDecoding];
-    } else {
-        self.games = [[Stack alloc] initWithSize:10];
+        return unarchivedData;
     }
-}
-
-- (void)saveNames:(NSArray<NSString *> *)namesArray {
-    NSMutableData *data = [[NSMutableData alloc] init];
-    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-    [archiver encodeObject:namesArray forKey:@"Names"];
-    [archiver finishEncoding];
-    [data writeToFile:[self nameFilePath] atomically:YES];
-}
-
-- (NSArray<NSString *> *)loadNames {
-    NSString *path = [self nameFilePath];
-    NSArray *namesArray = [NSArray array];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-        namesArray = [unarchiver decodeObjectForKey:@"Names"];
-        [unarchiver finishDecoding];
-    } else {
-        namesArray = @[@"姓",@"姓",@"姓",@"姓"];
-    }
-    return namesArray;
+    return nil;
 }
 
 @end
