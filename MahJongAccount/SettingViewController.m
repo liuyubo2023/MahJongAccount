@@ -56,6 +56,7 @@ static NSString *const kGamesSaving = @"Games";
     UITableViewCell *cell = [[UITableViewCell alloc] init];
     if (indexPath.section == 0) {
         GamerNameTableViewCell *nameCell = (GamerNameTableViewCell *)[tableView dequeueReusableCellWithIdentifier:KGamerNameTableViewCell forIndexPath:indexPath];
+        nameCell.selectionStyle = UITableViewCellSelectionStyleNone;
         nameCell.nameLabel.text = [NSString stringWithFormat:@"第%lu列的名字",indexPath.row+1];
         nameCell.nameTextField.text = self.namesMutableArray[indexPath.row];
         nameCell.nameTextField.tag = indexPath.row;
@@ -89,7 +90,7 @@ static NSString *const kGamesSaving = @"Games";
     
     self.namesMutableArray = [[[FileManager defaultManager] loadDataForKey:kNamesSaving] mutableCopy];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(didTapDone:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(didTapDone:)];
 }
 
 - (void)didTapDone:(id)sender {
