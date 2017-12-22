@@ -14,6 +14,7 @@
 		3C99EBA01FD58A8B00140A48 /* MahJongAccountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EB9F1FD58A8B00140A48 /* MahJongAccountTests.m */; };
 		3C99EBAB1FD58A8B00140A48 /* MahJongAccountUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EBAA1FD58A8B00140A48 /* MahJongAccountUITests.m */; };
 		3C99EBC51FD6F6B000140A48 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C99EBC41FD6F6B000140A48 /* AVFoundation.framework */; };
+		3CF4EE5E1FED5E4E00CFA6EC /* HomeCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4EE5D1FED5E4E00CFA6EC /* HomeCollectionViewDataSource.m */; };
 		3CFCE4A21FEBFA330031CA7F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCE49C1FEBFA330031CA7F /* ViewController.xib */; };
 		3CFCE4A31FEBFA330031CA7F /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE49F1FEBFA330031CA7F /* SettingViewController.m */; };
 		3CFCE4A41FEBFA330031CA7F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE4A01FEBFA330031CA7F /* ViewController.m */; };
@@ -79,6 +80,8 @@
 		3C99EBAC1FD58A8B00140A48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C99EBBF1FD5A6B300140A48 /* MahJongAccount-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MahJongAccount-Prefix.pch"; sourceTree = "<group>"; };
 		3C99EBC41FD6F6B000140A48 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3CF4EE5C1FED5E4E00CFA6EC /* HomeCollectionViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewDataSource.h; sourceTree = "<group>"; };
+		3CF4EE5D1FED5E4E00CFA6EC /* HomeCollectionViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewDataSource.m; sourceTree = "<group>"; };
 		3CFCE49C1FEBFA330031CA7F /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		3CFCE49D1FEBFA330031CA7F /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		3CFCE49E1FEBFA330031CA7F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -288,6 +291,8 @@
 				4C9C76131FE7E5D700DEC6F0 /* Stack.m */,
 				4C9C76141FE7E5D700DEC6F0 /* GameModel.h */,
 				4C9C76181FE7E5D700DEC6F0 /* GameModel.m */,
+				3CF4EE5C1FED5E4E00CFA6EC /* HomeCollectionViewDataSource.h */,
+				3CF4EE5D1FED5E4E00CFA6EC /* HomeCollectionViewDataSource.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -483,6 +488,7 @@
 				3C99EB961FD58A8B00140A48 /* main.m in Sources */,
 				4C9C76721FE941CB00DEC6F0 /* UIColor+ChameleonPrivate.m in Sources */,
 				3CFCE4AF1FEBFA730031CA7F /* MJCollectionViewCell.m in Sources */,
+				3CF4EE5E1FED5E4E00CFA6EC /* HomeCollectionViewDataSource.m in Sources */,
 				3CFCE4B81FEBFAB80031CA7F /* UIViewController+DismissKeyboard.m in Sources */,
 				4C9C76761FE941CB00DEC6F0 /* UIView+ChameleonPrivate.m in Sources */,
 				4C9C76741FE941CB00DEC6F0 /* UIColor+Chameleon.m in Sources */,
