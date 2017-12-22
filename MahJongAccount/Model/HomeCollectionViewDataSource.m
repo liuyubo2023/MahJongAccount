@@ -19,8 +19,8 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 @property (nonatomic, assign) NSInteger bankerCount;    //庄的计数
 
 @property (nonatomic, strong) NSMutableArray *countArray;  //计数的数组
-
 @property (nonatomic, copy) NSArray *namesArray;
+@property (nonatomic, assign) NSUInteger winTimes;         //倍数
 
 @end
 
@@ -47,6 +47,10 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
     MJCollectionViewCell *cell = (MJCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kCollectionCell forIndexPath:indexPath];
     Stack *games = [[FileManager defaultManager] loadDataForKey:kGamesSaving];
     self.namesArray = [[FileManager defaultManager] loadDataForKey:kNamesSaving];
+    _winTimes = [[[FileManager defaultManager] loadDataForKey:kTimesSaving] integerValue];
+    if (!_winTimes) {
+        [[FileManager defaultManager] saveData:[NSNumber numberWithInt:1] forKey:kTimesSaving];
+    }
     if (!self.namesArray) {
         self.namesArray = @[@"东", @"南", @"西", @"北"];
         [[FileManager defaultManager] saveData:self.namesArray forKey:kNamesSaving];
@@ -65,7 +69,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
             break;
         case 4 ... 11:
             cell.textField.backgroundColor = [UIColor flatBlueColor];
-            cell.textField.text = [NSString stringWithFormat:@"%d",([self.countArray[indexPath.row - 4] intValue] * 2)];
+            cell.textField.text = [NSString stringWithFormat:@"%d",([self.countArray[indexPath.row - 4] intValue] * (int)_winTimes)];
             break;
         case 12 ... 15:
             cell.textField.text = @"胡";

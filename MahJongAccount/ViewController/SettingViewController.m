@@ -16,6 +16,7 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
 @interface SettingViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *namesMutableArray;
+@property (nonatomic, assign) NSUInteger winTimes;         //倍数
 
 @end
 
@@ -29,7 +30,7 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -40,7 +41,7 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    if (section == 1) {
+    if (section == 2) {
         return 76;
     }
     return 12;
@@ -52,15 +53,25 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] init];
-    if (indexPath.section == 0) {
+    if (indexPath.section != 2) {
         GamerNameTableViewCell *nameCell = (GamerNameTableViewCell *)[tableView dequeueReusableCellWithIdentifier:KGamerNameTableViewCell forIndexPath:indexPath];
         nameCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        nameCell.nameLabel.text = [NSString stringWithFormat:@"第%lu列的名字",indexPath.row+1];
-        nameCell.nameTextField.text = self.namesMutableArray[indexPath.row];
-        nameCell.nameTextField.tag = indexPath.row;
+        if (indexPath.section == 0) {
+            nameCell.nameLabel.text = [NSString stringWithFormat:@"第%lu列的名字",indexPath.row+1];
+            nameCell.nameTextField.text = self.namesMutableArray[indexPath.row];
+            nameCell.nameTextField.tag = indexPath.row;
+        } else {
+            nameCell.nameLabel.text = @"这局游戏倍数";
+            nameCell.nameTextField.text = [NSString stringWithFormat:@"%lu",_winTimes];
+            nameCell.nameTextField.placeholder = @"请输入游戏倍数";
+            nameCell.nameTextField.keyboardType = UIKeyboardTypeNumberPad;
+            nameCell.nameTextField.tag = 1000;
+        }
         nameCell.nameTextField.delegate = self;
         [nameCell.nameTextField addTarget:self action:@selector(textFieldTextChanged:) forControlEvents:UIControlEventEditingChanged];
         cell = nameCell;
+    } else {
+        
     }
     return cell;
 }
@@ -70,7 +81,7 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    if (section == 1) {
+    if (section == 2) {
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(16, 40, CGRectGetWidth([UIScreen mainScreen].bounds) - 32, 44)];
         [button setBackgroundColor:UIColorFromRGB(0xed5565)];
         [button setTitle:@"清除数据" forState:UIControlStateNormal];
@@ -88,11 +99,14 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
     
     self.namesMutableArray = [[[FileManager defaultManager] loadDataForKey:kNamesSaving] mutableCopy];
     
+    self.winTimes = [[[FileManager defaultManager] loadDataForKey:kTimesSaving] integerValue];
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(didTapDone:)];
 }
 
 - (void)didTapDone:(id)sender {
     [[FileManager defaultManager] saveData:self.namesMutableArray forKey:kNamesSaving];
+    [[FileManager defaultManager] saveData:[NSNumber numberWithInteger:_winTimes] forKey:kTimesSaving];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -121,7 +135,9 @@ static NSString *const KGamerNameTableViewCell = @"GamerNameTableViewCell";
         case 3:
             self.namesMutableArray[3] = textField.text;
             break;
-            
+        case 1000:
+            self.winTimes = [textField.text integerValue];
+            break;
         default:
             break;
     }

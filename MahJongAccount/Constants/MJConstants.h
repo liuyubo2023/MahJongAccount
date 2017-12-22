@@ -17,3 +17,6 @@ typedef NS_ENUM(NSUInteger, WinType) {
 extern NSString *const kGamesSaving;
 
 extern NSString *const kNamesSaving;
+
+extern NSString *const kTimesSaving;
+

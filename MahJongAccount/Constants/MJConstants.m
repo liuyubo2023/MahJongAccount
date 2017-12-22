@@ -12,3 +12,5 @@ NSString *const kGamesSaving = @"Games";
 
 NSString *const kNamesSaving = @"Names";
 
+NSString *const kTimesSaving = @"Times";
+

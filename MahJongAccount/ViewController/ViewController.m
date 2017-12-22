@@ -108,6 +108,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
 
 - (void)collectionViewReloadDataSource {
     self.namesArray = [[FileManager defaultManager] loadDataForKey:kNamesSaving];
+    self.winTimes = [[[FileManager defaultManager] loadDataForKey:kTimesSaving] integerValue];
     [self.collectionView reloadData];
 }
 
@@ -118,7 +119,7 @@ static NSString *const kCollectionCell = @"MJCollectionViewCell";
         _bankerCount += 1;
     }
     //语音播报
-    NSString *speakString = [NSString stringWithFormat:@"%@+%d",self.namesArray[winnerNum],([_countArray[winnerNum+4] intValue] * 2)];
+    NSString *speakString = [NSString stringWithFormat:@"%@+%d",self.namesArray[winnerNum],([_countArray[winnerNum+4] intValue] * (int)_winTimes)];
     [self speechInfo:speakString];
     
     [self saveGameInfo];
