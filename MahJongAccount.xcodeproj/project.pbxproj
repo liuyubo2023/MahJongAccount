@@ -680,6 +680,7 @@
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86UUNEZV42;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MahJongAccount/MahJongAccount-Prefix.pch";
 				INFOPLIST_FILE = MahJongAccount/Info.plist;
